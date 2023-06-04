@@ -31,3 +31,7 @@ I ran the script and got the decompressed dll files.
 and now i can open the dll files in dnSpy. as you can see the screenshot below.
 
 ![dll](/SeeTheSharpFlag/screenshots/Screenshot%20(28).png)
+
+Now if we modufy the code try to run it in the any online c# compiler, we get the flag from the variable "secretInput"
+
+![dll](/SeeTheSharpFlag/screenshots/Screenshot%20(29).png)
