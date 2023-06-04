@@ -3,4 +3,7 @@ here I will upload RE Challenges
 
 ## challenges 
 ### Challenge : 1 
- - Difficulty : Hard [First](a.exe)
+ - Difficulty : Easy [First](a.exe)
+
+### Challenge : 2 SeeTheSharpFlag
+ - Difficulty : [Medium ](https://github.com/viralvaghela/crack-this/tree/main/SeeTheSharpFlag)
