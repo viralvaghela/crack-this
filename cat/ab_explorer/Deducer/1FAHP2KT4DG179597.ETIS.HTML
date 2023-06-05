@@ -1,0 +1,1563 @@
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+	
+	
+
+    
+    
+
+	
+	
+
+	
+	
+
+	
+	
+	
+
+    
+
+	
+
+    
+
+    
+
+    
+	
+  
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+        
+
+    
+    
+    
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+
+     		
+		
+	    
+		
+
+    
+    
+
+	 
+		
+
+
+    
+    
+    
+    
+
+    
+    
+
+<html><head>
+        <title>
+            Vehicle Summary
+    </title>
+         <!-- Viewport Meta
+        ************************************************** -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Stylesheets
+        ************************************************** -->
+        <link rel="stylesheet" href="/css/common.css" type="text/css" />
+        <link rel="stylesheet" href="/css/layout.css" type="text/css" />
+        <link rel="stylesheet" href="/tabs/style/nav.css" type="text/css" />
+        <!-- jQuery css. -->
+        <link rel="stylesheet" href="/css/jquery-ui-1.7.3.custom.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/jquery-pagination.css" type="text/css"/>
+        
+		<link rel="stylesheet" href="/vehicle/vehicleSummary.css" type="text/css" />
+		<link rel="stylesheet" href="/css/dsr/jquery-ui-1.7.3.custom.css" type="text/css" />
+	<link rel="stylesheet" href="/layout/fallback/css/style.min.css" type="text/css"/><script type="text/javascript" src="/js/jquery-1.3.2.js"></script>
+        <script type="text/javascript" src="/js/jquery-ui-1.7.3.custom.min.js"></script>
+        <script type="text/javascript" src="/js/jquery-ui-1.7.3.custom.dialog.min.js"></script>
+        <script type="text/javascript" src="/js/i18n/jquery.ui.datepicker-i18n.js"></script>
+        <script type="text/javascript" src="/js/jquery-pagination.js"></script>
+         <!-- Favicons, Apple Icons & Microsoft Icons
+        ************************************************** -->
+        <link rel="shortcut icon" href="/layout/global/img/favicons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="57x57" href="/layout/global/img/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/layout/global/img/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/layout/global/img/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/layout/global/img/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/layout/global/img/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/layout/global/img/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/layout/global/img/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/layout/global/img/favicons/apple-touch-icon-152x152.png">
+        <link rel="icon" type="image/png" href="/layout/global/img/favicons/favicon-196x196.png" sizes="196x196">
+        <link rel="icon" type="image/png" href="/layout/global/img/favicons/favicon-160x160.png" sizes="160x160">
+        <link rel="icon" type="image/png" href="/layout/global/img/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="/layout/global/img/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/layout/global/img/favicons/favicon-16x16.png" sizes="16x16">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-square70x70logo" content="/layout/global/img/favicons/mstile-70x70.png">
+        <meta name="msapplication-square150x150logo" content="/layout/global/img/favicons/mstile-150x150.png">
+        <meta name="msapplication-square310x310logo" content="/layout/global/img/favicons/mstile-310x310.png">
+        <meta name="msapplication-wide310x150logo" content="/layout/global/img/favicons/mstile-310x150.png">
+
+        <script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script></head>
+    <body onload="setup();" >
+
+
+    <!-- Triggers Mobile Navigation (Hamburger Icon) -->
+  	<!-- Triggers Mobile Navigation (Hamburger Icon) -->
+<div th:fragment="mobile-navigation-trigger" class="mobile-navigation-trigger">
+
+    <a href="#" class="mobile__toggle"></a>
+    <div class="mobile__trigger">
+        <a href="#">
+            <i class="fa fa-bars">
+              <p>Navigation</p>
+            </i>
+        </a>
+    </div>
+
+</div>
+<div class="site-wrapper site">
+
+    <noscript>
+        </noscript>
+        <div id="responsive-wrapper">
+        <!-- Mobile Navigation -->
+    <!-- Primary Navigation (Dark bar) -->
+
+
+
+
+
+
+    
+    
+    
+
+
+
+
+
+
+    
+    
+    
+<!-- Mobile Primary Navigation (Side bar) -->
+<div th:fragment="mobile-navigation" class="navigation__mobile closed" id="mobile-navigation" role="navigation">
+  <ul class="mobile__buttons">
+    <li class="mobile__button ">
+        <a href="#">Home<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/home/welcome.do">Welcome</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/home/about.do">About FordEtis</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/home/conditions.do">Conditions</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/home/charging.do">Charging</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/options.do">Preferences</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/home/contactUs.do">Contact Us</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button active">
+        <a href="#">Vehicle<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/vehicleRegSelector.do">Vehicle Lookup</a>
+        </li>
+        <li class="mobile__secondary-button active">
+            <a href="/selectedVehicleDetails.do">Vehicle Summary</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/admin/resolvedPublications.do">Resolved Publications</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button ">
+        <a href="#">Information<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/bemm/bemmSelectionForm.do">Vehicle Conversions</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/information/partsCatalog.do">Parts Catalog</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/information/accessoriesCatalog.do">Accessories Catalog</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button ">
+        <a href="#">Services<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/services/specialToolForm.do">Special Tools</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/services/generalWorkshopEquipment.do">Workshop Equipment</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button ">
+        <a href="#">FordService<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/fordservice/home.do">FordService Home</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/fordservice/serviceScheduleForm.do">Service Schedules</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/bemm/bemmSelectionForm.do">Vehicle Conversions</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/fordservice/rescuecards.do">Rescue Cards</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button ">
+        <a href="#">Help<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/help/copyright.do">Copyright</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/help/privacy.do">Privacy</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/help/accessibility.do">Accessibility</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/help/irfaq.do">FAQ</a>
+        </li>
+        </ul></li>
+      </ul>
+</div>
+
+<!-- Header (Logo + Title, Account Information) -->
+    <!-- Header -->
+<div class="header ">
+  <div class="container">
+    <div class="grid">
+
+      <div class="grid__item one-half palm-one-whole palm-ac header__logo-wrapper">
+        <a href="#" class="header__logo">
+          <img src="/layout/responsive/img/logo/ford-logo@2x.png" class="logo" alt="FordEtis" title="Return to the Home page">
+          <h1>Ford<span>Etis</span></h1>
+        </a>
+      </div><!--
+
+    --><div class="grid__item one-half palm-one-whole palm-ac header__account-wrapper">
+         <div class="header__account">
+           <a href="/home/loginForm.do" class="account__logout">
+               <p>Login or Register</p>
+               <i class="fa fa-sign-in login--tablet"></i>
+             </a>
+           </div><!--
+      --><i class="fa fullscreen fa-compress"></i>
+
+       </div>
+
+     </div>
+  </div>
+</div>
+<div class="global-wrapper active">
+
+      <!-- Desktop Navigation -->
+      <!-- Primary Navigation (Dark bar) -->
+
+
+
+
+
+
+    
+    
+    
+
+
+
+
+
+
+    
+    
+    
+<!-- Primary Navigation -->
+<div th:fragment="primary-navigation" class="navigation__primary">
+
+    <div class="container">
+        <div class="grid">
+            <div class="grid__item one-whole">
+                <ul class="navigation__buttons">
+                    <li class="navigation__button">
+                            <a href="/home.do" class="button__first">Home</a></li>
+                    <li class="navigation__button">
+                            <a href="/vehicleRegSelector.do" class=" active">Vehicle</a><img src="/layout/responsive/img/active-point/active-nav-point.svg" alt="Active Page" class="button--active-point" onerror="this.onerror=null; this.src='/layout/responsive/img/active-point/active-nav-point.png'">
+                            </li>
+                    <li class="navigation__button">
+                            <a href="/information.do" class="">Information</a></li>
+                    <li class="navigation__button">
+                            <a href="/services.do" class="">Services</a></li>
+                    <li class="navigation__button">
+                            <a href="/fordservice/home.do" class="">FordService</a></li>
+                    <li class="navigation__button">
+                            <a href="/help.do" class="button__last">Help</a></li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Secondary Navigation (Branded blue bar) -->
+
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<!-- Secondary Navigation (Branded blue bar) -->
+<div th:fragment="secondary-navigation" class="navigation__secondary">
+    <div class="container">
+        <div class="grid">
+            <div class="grid__item one-whole">
+                <ul class="navigation__buttons">
+                    <li class="navigation__button">
+                            <a href="/vehicleRegSelector.do" class="button__first">Vehicle Lookup</a></li><!--
+                        --><li class="navigation__button active">
+                                    <a href="/selectedVehicleDetails.do" class="">Vehicle Summary</a></li><!--
+                        --><li class="navigation__button">
+                            <a href="/admin/resolvedPublications.do" class="">Resolved Publications</a></li><!--
+                        --></ul>
+            </div>
+        </div>
+    </div>
+</div><!-- Hero Unit (Displays background image and page title) -->
+      <div th:fragment="hero-unit" class="hero hero__vehicle">
+    <div class="container">
+        <div class="grid">
+            <div class="grid__item one-whole">
+                <div class="hero__contents">
+                    <h2>
+            Vehicle Summary
+    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Information Bar (Displays last selected vehicle and 'need help?' link depending on page) -->
+      <div th:fragment="information-bar" class="information-bar">
+  <div class="container">
+    <div class="grid">
+      <div class="grid__item one-whole palm-one-whole information-bar__left">
+        <a href="/selectedVehicleDetails.do"><p>
+          <span class="last-selected">
+            <i class="fa fa-bookmark"></i><strong>Last selected vehicle -</strong>
+          </span>
+          
+                (1FAHP2KT4DG179597) Taurus, 3.5L DOHC V6 Petrol T/C, Sterling Grey Metallic</p></a>
+      </div></div>
+  </div>
+</div>
+</div>
+
+</div>
+    <div class="content-wrapper">
+        
+    
+		
+	
+		<SCRIPT language="JavaScript" type="text/javascript">
+															            
+		
+		    var show = false;
+		    
+		    function setup() 
+		    {
+				//OASIS LOOK UP AJAX CALL
+		    	var holderNode = document.getElementById('statusHolder');
+                holderNode.innerHTML = '<iframe id="statusLookup" name="vinLookup" src="/oasisLookup.do?VIN=1FAHP2KT4DG179597" style="visibility: hidden; border:0; height:0px "></iframe>';
+
+		    	var recallBoxNode = parent.document.getElementById('recallContentFrame');
+        		recallBoxNode.style.visibility = "visible";                    
+				
+				
+				
+				
+				//GIVIS LOOK UP AJAX CALL
+				holderNode.innerHTML += '<iframe id="givisLookup" name="vinLookup2" src="/givis/lookup.do" style="visibility: hidden; border:0; height:0px "></iframe>';
+                                       
+                var modulesBoxNode = parent.document.getElementById('modulesContentFrame');
+                modulesBoxNode.style.visibility = "visible";    
+               
+                
+				
+				
+               
+        		
+				show = false;
+				
+				
+						showOption('mfcList','mfcShowMore','mfcImg');   
+					
+				
+				setupDtmPoc();    
+				setupDtm();    
+		    }
+		    
+			function showOption(object,moreContent,picture) 
+			{
+			  if(show) 
+			  {
+				document.getElementById(object).style.height = '';
+				document.getElementById(moreContent).style.display = 'none';
+			    document.getElementById(picture).src = '/img/NavPanelArrowCloseUp-18x18.gif';
+				document.getElementById(picture).title = 'Click to collapse';
+			    show = false;
+			  }
+			  else 
+			  {
+				document.getElementById(object).style.height = '45'
+			    document.getElementById(moreContent).style.display = '';
+				document.getElementById(picture).src = '/img/NavPanelArrowCloseDown-18x18.gif';
+				document.getElementById(picture).title = 'Click to expand';
+			    show = true;
+			  }
+			}	    
+		
+		
+		function showRegistrationList()
+		{
+			var buttonsOpts = {};
+			buttonsOpts["Close"] =  function() { $(this).dialog("close"); };
+			
+			
+			
+			var $dialog = $('#moreThanOneRegModal')
+		    .dialog({
+		    	title: "",
+		        autoOpen: false,
+		        modal: true,
+		        resizable: false,
+		        width: 640,
+		        buttons: buttonsOpts
+		    });
+			
+			$dialog.dialog("open");
+		}
+		
+        $(window).resize(function()
+        {
+            $("#metaDataModal").dialog("option", "position", "center");
+        });
+                
+        $(window).scroll(function ()
+        {
+            $("#metaDataModal").dialog("option","position","center");
+        });
+
+		function showMetaDataDialog(otxRef, nodeRef)
+		{
+		    var buttons = {};
+		    var ok = 'OK';
+		    buttons[ok] = function() { $("#metaDataModal").dialog("destroy"); };
+
+		    var spinner = "<div style=\"position: absolute; left:220;\"><img src=\"/img/ajax-loader.gif\"/></div>";
+		    $("#metaDataModal").html(spinner);
+		    
+            $("#metaDataModal").dialog({
+                modal: true,
+                open: function(event, ui) {                  	 
+                     $('#metaDataModal').dialog('option', 'position', 'center');
+                },
+                autoOpen: false,                   
+                buttons: buttons,                   
+                width: 500
+           });
+            
+           $("#metaDataModal").dialog("open");
+           $("#metaDataModal").load("/vehicle/electiveUpgradeMetaData.do?otxRef=" + otxRef + "&nodeAddress=" + nodeRef, function()
+           {
+        	   $('.ui-widget-content a').css('color', 'Blue');
+        	   $('#metaDataModal').dialog('option', 'position', 'center');
+           });
+		}
+	
+		function setupDtmPoc()
+		{
+			$("a.dtmPocLongDescription").click(function(e) {
+				e.preventDefault();
+				dtmPocDescriptionView($('#dtmPocLongDescription').val());
+			});
+		}
+	
+		function dtmPocDescriptionView(description)
+		{
+			var buttonsOpts = {};
+			buttonsOpts['Close'] = function() {
+				$(this).dialog("destroy");
+			};
+
+			var $dialog = $('#dtmPocDescriptionViewModal').dialog({
+				open: function(event, ui) { 
+					$('.ui-dialog-content').css('height','200px');  
+					window.setTimeout(function () {	$(document).unbind('mousedown.dialog-overlay').unbind('mouseup.dialog-overlay'); }, 100); 	
+				},
+				autoOpen : false,
+				modal : true,
+				resizable : false,
+				width : 640,
+				buttons : buttonsOpts
+			});
+
+			$("#dtmPocLongDescriptionView").html(description);			
+			$dialog.dialog("open");					
+			return false;
+		}
+		
+		$dtmHistoryView = false;
+		function setupDtm()
+		{
+			$(".dtmExpand").hide();
+			
+			if (true)
+			{
+				$("a.dtmLongDescription").click(function(e) {
+					e.preventDefault();
+					dtmDescriptionView($('#dtmLongDescription').val());
+				});
+
+				if(false)
+				{
+					var historyNode = parent.document.getElementById('repairHistory');
+					historyNode.style.visibility = "visible";
+					historyNode.style.display = "block";
+				}
+			}
+		}
+	
+		function dtmDescriptionView(description)
+		{
+			var buttonsOpts = {};
+			buttonsOpts['Close'] = function() {
+				$(this).dialog("destroy");
+			};
+
+			var $dialog = $('#dtmDescriptionViewModal').dialog({
+				open: function(event, ui) { 
+					$('.ui-dialog-content').css('height','200px');  
+					window.setTimeout(function () {	$(document).unbind('mousedown.dialog-overlay').unbind('mouseup.dialog-overlay'); }, 100); 	
+				},
+				autoOpen : false,
+				modal : true,
+				resizable : false,
+				width : 640,
+				buttons : buttonsOpts
+			});
+
+			$("#dtmLongDescriptionView").html(description);			
+			$dialog.dialog("open");					
+			return false;
+		}
+		
+		function toggleDtmHistoryView()
+		{
+			$dtmHistoryView = !$dtmHistoryView;
+			
+			if($dtmHistoryView)
+			{
+				$(".dtmExpand").show();
+				$("#dtmExpandImage").attr("src", "/img/NavPanelArrowCloseUp-18x18.gif");
+				$("#dtmExpandImage").attr("title", "Click to collapse");
+			}
+			else
+			{
+				$(".dtmExpand").hide();
+				$("#dtmExpandImage").attr("src", "/img/NavPanelArrowCloseDown-18x18.gif");
+				$("#dtmExpandImage").attr("title", "Click to expand");
+			}
+		}
+		</SCRIPT>
+		
+	<style type="text/css">
+		.row0 { background-color:#FFFFFF; }
+		.row1 { background-color:#F0F8FF; }
+	</style>
+	    
+       <div id="metaDataModal" style="display: none;">
+       </div>
+
+           
+         
+        <table class="mainTable" border="0" width="95%" cellspacing="0" cellpadding="0">
+
+			<NOSCRIPT>
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="2">
+                	<div class="redBoxGreyBorder" style="padding: 4px; margin-top: 4px; margin-bottom: 4px;">
+                		This page requires JavaScript for full functionality, <a href="/help/howTo/minSpec.do">click here for more information</a>.
+                	</div>
+                </td>
+            </tr>
+            <tr><td colspan="3"></td></tr>
+			</NOSCRIPT>
+
+            <tr>
+            	<td>&nbsp;</td>
+				<td colspan="2" style="padding: 3px">
+				    <h2 style="display:inline">Vehicle Summary</h2>
+					
+				</td>
+			</tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="2">
+
+            
+<table width="100%" border="0" cellspacing="1" cellpadding="0">					
+	<tr>
+	
+		<td width="50%" valign="top">
+
+
+							
+				<div id="statusHolder" class="whatsnewBorder" style="visibility: hidden;">
+				</div>	
+				
+            
+            <div id="electiveUpgradesHolder" class="whatsnewBorder" style="visibility: hidden;">
+            </div>              
+							
+					
+			
+			<div id="publicationsContent" class="whatsnewBorder" >
+			
+	            
+				<div id="checksheetContent">
+	            	<p class="summaryTitle">FordService</p>
+	                <span class="summaryContent">
+						<a href="/fordservice/serviceScheduleForm.do">Generate a FordService schedule</a><br/>
+					</span>
+	            </div>
+	            
+	            
+	           	
+	            	            	       
+	            
+	            
+                
+					
+	            
+				
+				<div id="vehicleConversions">
+	            	<p class="summaryTitle">Vehicle Conversions</p>
+	                <span class="summaryContent">
+						<a href="/bemm/bemmSelectionForm.do">Body & Equipment Mounting Manual (BEMM)</a><br/>
+					</span>
+	            </div>
+	            
+	            
+	            
+	            
+	            
+	            
+	            
+	            <!-- TAN link -->
+	            
+
+	            
+				
+				<div id="partsCatalog">
+	            	<p class="summaryTitle">Parts Catalog</p>
+	                <span class="summaryContent">
+						<a href="/externalURL.do?url=http://www.fordecat.com">www.fordecat.com</a><br/>
+					</span>
+	            </div>
+
+				
+				
+				<div id="rescueCards">
+	            	<p class="summaryTitle">Rescue Cards</p>
+	                <span class="summaryContent">
+	                
+						<a href="/fordservice/rescuecards.do">Download Rescue Cards</a><br/>
+					
+					</span>
+	            </div>
+				
+			</div>
+			
+
+			<!-- Start Demo panel - Service Tools -->
+			
+	        
+	        
+			<!-- End Demo panel -->
+
+			
+				
+					
+			<div id="recallContentFrame" class="whatsnewBorder" style="visibility: hidden">
+            	<p class="summaryTitle">Outstanding Field Service Actions</p>
+				<div id="recallContent">
+	            	
+	            	<span class="summaryContent">We will check for outstanding service actions on your selected vehicle, using your detected country: United States</br>If this country is incorrect, please visit the <a href="/options.do">preferences</a> page and set your country before returning to this page.</br></br></span>
+	            	<span class="summaryContent">Checking for outstanding actions... Please Wait!</span>
+            	</div>
+			</div>
+			
+			
+			
+            
+            
+                         
+            
+			  			
+			
+			
+    		
+
+			
+				
+			
+
+                     
+            
+						
+
+			
+			
+			
+
+			
+			
+            
+            	            
+            
+            
+            
+            
+            
+            
+            
+            
+			
+            
+				
+       			
+       			
+       				
+       			
+            	
+            		
+		            	<div id="DowntimeManagementZone" class="blueBoxGreyBorder">
+				        	<span class="summaryTitle">Downtime Management</span>
+				        	<div id="dtmContent">
+				            	<span class="summaryContent">Your vehicle is not registered on the Ford Repair Status tracking system. Only Ford Motor Company approved commercial vehicle dealers have access to online repair tracking. If your Ford vehicle is with a Ford Dealer please contact them directly.</span>
+							</div>
+			        	</div>
+	        		
+	        		
+	        	
+            
+            
+		</td> 
+		<td>
+		
+		
+		
+	
+
+
+	
+
+		<td valign="top">
+
+			
+			<table width="100%" border="0">
+				<tr>
+					
+					<td>
+						<img src="/img/vehicle/missing.jpg" alt="" />
+					 	<div class="summaryContent">* Illustration shows model only </div>
+					</td>
+					
+					
+					<td  valign="top" align="left">
+
+						
+						<table cellspacing="0" cellpadding="0"  border="0" bordercolor="blue"> 
+							
+							<tr>	
+								<td colspan="2">
+									<span class="vehicleName">
+										Taurus, 3.5L DOHC V6 Petrol T/C, Sterling Grey Metallic
+									</span>
+								</td>
+							<tr>
+							<tr><td colspan="2">&nbsp;</td></tr>
+				            <tr>
+				                <td noWrap align="right" width="1%"><span class="summaryContent">VIN Number:</span></td>
+				                <td ><span class="summaryContent">&nbsp;&nbsp;1FAHP2KT4DG179597</span></td>
+				            </tr>
+						
+					
+	     				
+					
+					
+		            
+				    
+			            </table>
+					
+                    
+			
+			
+
+
+
+
+<div id="moreThanOneRegModal" style="display:none;">
+<table cellspacing="0" cellpadding="0"  border="0" width="100%"> 
+	<tr>
+		<td colspan="3"><span class="summaryTitle">Registration information for your currently selected Vehicle:</span></td>
+	</tr>
+	<tr>
+		<td colspan="3">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="3"><span class="summaryTitle">First Registration Date:</span></td>
+	</tr>
+	<tr class="row1">
+		<td><span class="summaryTitle">Registration Number:</span></td>
+		<td><span class="summaryTitle">Registration Date:</span></td>
+		<td><span class="summaryTitle">Registration Country:</span></td>
+		<td><span class="summaryTitle">Modified Date:</span></td>
+		
+	</tr>
+	
+	<tr>
+		<td colspan="3">&nbsp;</td>
+	</tr>
+	<tr>
+		<td colspan="3"><span class="summaryTitle">Historic Registration Dates:</span></td>
+	</tr>
+	<tr class="row1">
+		<td><span class="summaryTitle">Registration Number:</span></td>
+		<td><span class="summaryTitle">Registration Date:</span></td>
+		<td><span class="summaryTitle">Registration Country:</span></td>
+		<td><span class="summaryTitle">Modified Date:</span></td>
+		
+	</tr>
+	
+</table>
+</div>
+			
+					
+					
+					</td>
+				</tr>
+			</table>
+			
+
+			
+			
+			
+        	
+			<div id="pfcSummary" class="whatsnewBorder">
+			<table width="95%" border="0" cellspacing="0" cellpadding="0"  >
+	            <tr>
+	                <td colspan="2">
+	                	<span class="summaryTitle">Primary Features</span>
+	                </td>
+	            </tr>
+	            <tr>
+	                <td noWrap width="25%"><span class="summaryPrompt">Build Date:</span></td>
+	                <td><span class="summaryContent">&nbsp;&nbsp;11.11.2012</span></td>
+	            </tr>
+	            
+		            <tr>
+		                <td noWrap width="25%"><span class="summaryPrompt">Vehicle Line:</span></td>
+		                <td><span class="summaryContent">&nbsp;&nbsp;Taurus</span></td>
+		            </tr>
+	            
+	            
+		            <tr>
+		                <td noWrap width="25%"><span class="summaryPrompt">Body Style:</span></td>
+		                <td><span class="summaryContent">&nbsp;&nbsp;4 Door Saloon</span></td>
+		            </tr>
+	            
+	            
+	            
+		            <tr>
+		                <td noWrap width="25%"><span class="summaryPrompt">Version:</span></td>
+		                <td><span class="summaryContent">&nbsp;&nbsp;SHO</span></td>
+		            </tr>
+	            
+	            
+	            
+		            <tr>
+		                <td noWrap width="25%"><span class="summaryPrompt">Engine:</span></td>
+		                <td><span class="summaryContent">&nbsp;&nbsp;3.5L DOHC V6 Petrol T/C</span></td>
+		            </tr>
+	            
+	            
+		            <tr>
+		                <td noWrap width="25%"><span class="summaryPrompt">Transmission:</span></td>
+		                <td><span class="summaryContent">&nbsp;&nbsp;6 Speed Auto Transmission 6F55</span></td>
+		            </tr>
+	            
+	            
+	            
+		            <tr>
+		                <td noWrap width="25%"><span class="summaryPrompt">Drive:</span></td>
+		                <td><span class="summaryContent">&nbsp;&nbsp;LHD 4WD (FTD)</span></td>
+		            </tr>
+	            
+	            
+		            <tr>
+		                <td noWrap width="25%"><span class="summaryPrompt">Axle Ratio:</span></td>
+		                <td><span class="summaryContent">&nbsp;&nbsp;2.77</span></td>
+		            </tr>
+	            
+	            
+		            <tr>
+		                <td noWrap width="25%"><span class="summaryPrompt">Emission:</span></td>
+		                <td><span class="summaryContent">&nbsp;&nbsp;With California/Green State Req</span></td>
+		            </tr>
+	            
+	            
+		            <tr>
+		                <td noWrap width="25%"><span class="summaryPrompt">Air Conditioning:</span></td>
+		                <td><span class="summaryContent">&nbsp;&nbsp;Dual Zone Auto Temp Control A/C</span></td>
+		            </tr>
+	            
+	            
+		            <tr>
+		                <td noWrap width="25%"><span class="summaryPrompt">Territory:</span></td>
+		                <td><span class="summaryContent">&nbsp;&nbsp;(+)"USA"</span></td>
+		            </tr>
+	            
+	            
+		            <tr>
+		                <td noWrap width="25%"><span class="summaryPrompt">Paint:</span></td>
+		                <td><span class="summaryContent">&nbsp;&nbsp;Sterling Grey Metallic</span></td>
+		            </tr>
+	            
+	            
+	            
+			</table>
+			</div>
+				
+			
+			
+			
+							
+							
+			
+			
+					
+									
+			
+			
+							
+								
+				
+			
+							
+							
+				
+			
+			
+			
+				
+			
+        	
+			<div id="minorFeatures" class="whatsnewBorder">
+				<div style="height:18px;width:100%;background-color: #C8CDD5;text-align:right;">
+					                             
+								<img id="mfcImg" src="/img/NavPanelArrowCloseDown-18x18.gif" onclick="showOption('mfcList','mfcShowMore','mfcImg')" height="16" width="20" style="background-color: #C8CDD5; vertical-align: middle;">
+							
+				</div>
+				<div id="mfcSummary">
+					<p class="summaryTitle">Minor Features</p>
+					<div id="mfcList" style="overflow:hidden;">
+						<div style="width:100%;">
+							<span id="mfcs">
+								<ul class="mfcList">
+								
+									<li><span>&nbsp;Charcoal Black Interior</span></li>
+								
+									<li><span>&nbsp;With Wrapped "B" Pillar Trim</span></li>
+								
+									<li><span>&nbsp;Rear End Fascia - Level 2</span></li>
+								
+									<li><span>&nbsp;Fr Dr Scuff Plate - Met Insert</span></li>
+								
+									<li><span>&nbsp;Less Body Armour</span></li>
+								
+									<li><span>&nbsp;With Front Fascia-Level 3</span></li>
+								
+									<li><span>&nbsp;With Performance Front Fenders</span></li>
+								
+									<li><span>&nbsp;Driver & Passenger Seat Map Pockets</span></li>
+								
+									<li><span>&nbsp;With Heated/Cooled Front Seats Only</span></li>
+								
+									<li><span>&nbsp;Less Centre Console Top Finisher</span></li>
+								
+									<li><span>&nbsp;My Key</span></li>
+								
+									<li><span>&nbsp;(-) Version Packages</span></li>
+								
+									<li><span>&nbsp;Chicago Plant Build</span></li>
+								
+									<li><span>&nbsp;Less Appearance Group</span></li>
+								
+									<li><span>&nbsp;With Memory Pack</span></li>
+								
+									<li><span>&nbsp;Feature Content Group 1</span></li>
+								
+									<li><span>&nbsp;Less Paint Package</span></li>
+								
+									<li><span>&nbsp;With English Language Label</span></li>
+								
+									<li><span>&nbsp;Owner Hand Book Pack</span></li>
+								
+									<li><span>&nbsp;Less Mass Customization Package</span></li>
+								
+									<li><span>&nbsp;"A" Pillar Cloth Trim</span></li>
+								
+									<li><span>&nbsp;"C" Pillar Cloth Trim</span></li>
+								
+									<li><span>&nbsp;Power Front Wndow-1 Tch Up/Dwn-Pass</span></li>
+								
+									<li><span>&nbsp;With Electric Rear Windows</span></li>
+								
+									<li><span>&nbsp;With Solar Tinted Glass</span></li>
+								
+									<li><span>&nbsp;With Front Side Laminated Glass</span></li>
+								
+									<li><span>&nbsp;With Aluminium Instrument Panel</span></li>
+								
+									<li><span>&nbsp;Standard Ovrhed Console & With Rail</span></li>
+								
+									<li><span>&nbsp;With Full Floor Console</span></li>
+								
+									<li><span>&nbsp;Less Rear Floor Console</span></li>
+								
+									<li><span>&nbsp;Memory Adjustable Foot Pedals</span></li>
+								
+									<li><span>&nbsp;Front Throw In Mats With Logo No.2</span></li>
+								
+									<li><span>&nbsp;Rear Floor Carpet Mats</span></li>
+								
+									<li><span>&nbsp;With Carpet Floor Covering</span></li>
+								
+									<li><span>&nbsp;With Illuminated Sunvisor - Drivers</span></li>
+								
+									<li><span>&nbsp;With Illuminated Sunvisor-Passenger</span></li>
+								
+									<li><span>&nbsp;Door Trim Panel Insert-Film 2</span></li>
+								
+									<li><span>&nbsp;Grab Handle Side Door -  Plastic</span></li>
+								
+									<li><span>&nbsp;With Power Rear Sunblind</span></li>
+								
+									<li><span>&nbsp;Trim Rear - High Line</span></li>
+								
+									<li><span>&nbsp;With Load Retention Net</span></li>
+								
+									<li><span>&nbsp;Spare Wheel Stowage Cover</span></li>
+								
+									<li><span>&nbsp;Grille - A-Gloss</span></li>
+								
+									<li><span>&nbsp;Less Active Grilleshutter</span></li>
+								
+									<li><span>&nbsp;Bright Greenhouse DLO Moulding</span></li>
+								
+									<li><span>&nbsp;With Single Rear Wing Spoiler</span></li>
+								
+									<li><span>&nbsp;Inside Mirror With Auto Wipe Sensor</span></li>
+								
+									<li><span>&nbsp;4 Door Saloon</span></li>
+								
+									<li><span>&nbsp;Dual Pwr/Htd/Fld/E'Chro/Pudd Lamp</span></li>
+								
+									<li><span>&nbsp;Ext Mirror Finish-A Gloss Skull Cap</span></li>
+								
+									<li><span>&nbsp;Less Rear Sliding Seat</span></li>
+								
+									<li><span>&nbsp;With Rear Center Head Restraint</span></li>
+								
+									<li><span>&nbsp;With Heated Rear Seats</span></li>
+								
+									<li><span>&nbsp;2nd Row Seat 60/40 (3 P) - Folding</span></li>
+								
+									<li><span>&nbsp;Less 3rd Row Rear Seat</span></li>
+								
+									<li><span>&nbsp;With Driver 10 Way Pwr Seat Adjust</span></li>
+								
+									<li><span>&nbsp;With Pass 10 Way Power Seat Adjust</span></li>
+								
+									<li><span>&nbsp;With Programmable Driver Seat</span></li>
+								
+									<li><span>&nbsp;Less Interceptor Siren/Speaker</span></li>
+								
+									<li><span>&nbsp;Less Special Service Vehicles 1</span></li>
+								
+									<li><span>&nbsp;Less Special Service Vehicles 2</span></li>
+								
+									<li><span>&nbsp;Less Special Service Vehicles 3</span></li>
+								
+									<li><span>&nbsp;Less Special Service Vehicles 4</span></li>
+								
+									<li><span>&nbsp;Less Engine Oil Cooler</span></li>
+								
+									<li><span>&nbsp;Body Coloured Exterior Door Handle</span></li>
+								
+									<li><span>&nbsp;With Leather Gear Shift Knob</span></li>
+								
+									<li><span>&nbsp;Less Decklid Pulldown</span></li>
+								
+									<li><span>&nbsp;Less Keyed Alike Options</span></li>
+								
+									<li><span>&nbsp;Frequency - 315MHZ</span></li>
+								
+									<li><span>&nbsp;With Central Locking System</span></li>
+								
+									<li><span>&nbsp;Keyless Entry/Start - Passive</span></li>
+								
+									<li><span>&nbsp;Rain Sensitive Windshield Wipers</span></li>
+								
+									<li><span>&nbsp;Less Sun Roof</span></li>
+								
+									<li><span>&nbsp;Less Tu-Tone Accent Colour</span></li>
+								
+									<li><span>&nbsp;With Front Licence Plate Bracket</span></li>
+								
+									<li><span>&nbsp;Side Air Bag - 1st & 2nd row</span></li>
+								
+									<li><span>&nbsp;Rear Seat Belts-2nd Row</span></li>
+								
+									<li><span>&nbsp;Spare Wheel-18" Mini</span></li>
+								
+									<li><span>&nbsp;19 X 8.5 Prem Painted Alum Wheel</span></li>
+								
+									<li><span>&nbsp;18" Mini Spare Tyre</span></li>
+								
+									<li><span>&nbsp;Less Wheel Covers</span></li>
+								
+									<li><span>&nbsp;Less Immersion Heater</span></li>
+								
+									<li><span>&nbsp;With Remote Starter</span></li>
+								
+									<li><span>&nbsp;With California/Green State Req</span></li>
+								
+									<li><span>&nbsp;With Standard Suspension</span></li>
+								
+									<li><span>&nbsp;2.77</span></li>
+								
+									<li><span>&nbsp;3.5L DOHC V6 Petrol T/C</span></li>
+								
+									<li><span>&nbsp;Dual Exhaust</span></li>
+								
+									<li><span>&nbsp;With Dual Chrome Exhaust Extension</span></li>
+								
+									<li><span>&nbsp;Power 4-Wheel Disc Vacuum Boost</span></li>
+								
+									<li><span>&nbsp;With Painted Brake Calipers</span></li>
+								
+									<li><span>&nbsp;With Anti Lock Brakes And ESP+</span></li>
+								
+									<li><span>&nbsp;Normal Fuel Fill</span></li>
+								
+									<li><span>&nbsp;Less Floor Mats-FIA</span></li>
+								
+									<li><span>&nbsp;Less Transmission Oil Cooler</span></li>
+								
+									<li><span>&nbsp;Floor Shift</span></li>
+								
+									<li><span>&nbsp;Select Shift Tech (SST) W/Pad Shift</span></li>
+								
+									<li><span>&nbsp;Non Locking Capless Fuel Fill</span></li>
+								
+									<li><span>&nbsp;For Unleaded Fuel</span></li>
+								
+									<li><span>&nbsp;Unique Met Finish Foot Pedals Pads</span></li>
+								
+									<li><span>&nbsp;With Electric Power Steering</span></li>
+								
+									<li><span>&nbsp;Power Tilt/Telescopic Strg Column</span></li>
+								
+									<li><span>&nbsp;Less Steering Column Lock</span></li>
+								
+									<li><span>&nbsp;Sport/Leather Steering Wheel</span></li>
+								
+									<li><span>&nbsp;With Heated Steering Wheel</span></li>
+								
+									<li><span>&nbsp;Adp Spd Cnt-Coll Mit & FWD Sns</span></li>
+								
+									<li><span>&nbsp;Redundant Controls-Steering Wheel 2</span></li>
+								
+									<li><span>&nbsp;With MPH/KMH Speedometer</span></li>
+								
+									<li><span>&nbsp;Less Tyre Inflation Kit</span></li>
+								
+									<li><span>&nbsp;With Header Mnt Compass/Thermometer</span></li>
+								
+									<li><span>&nbsp;With Nav System-Becker Traffic Pro</span></li>
+								
+									<li><span>&nbsp;Less Lane Departure Warning System</span></li>
+								
+									<li><span>&nbsp;With Blind Spot Monitoring</span></li>
+								
+									<li><span>&nbsp;Human Machine Interface 4</span></li>
+								
+									<li><span>&nbsp;With Perimeter Anti-Theft</span></li>
+								
+									<li><span>&nbsp;With Rear Parking Aid</span></li>
+								
+									<li><span>&nbsp;Less Front Parking Aid</span></li>
+								
+									<li><span>&nbsp;With Automated Parking System</span></li>
+								
+									<li><span>&nbsp;Medium Duty Battery</span></li>
+								
+									<li><span>&nbsp;Heavy Duty Alternator</span></li>
+								
+									<li><span>&nbsp;With Region 1 Electronic Equipment</span></li>
+								
+									<li><span>&nbsp;AM/FM CD/Clock</span></li>
+								
+									<li><span>&nbsp;With Satellite Radio Reception</span></li>
+								
+									<li><span>&nbsp;With NAAO Radio Frequency</span></li>
+								
+									<li><span>&nbsp;HD Radio Broadcast</span></li>
+								
+									<li><span>&nbsp;With Level 2 Sound System</span></li>
+								
+									<li><span>&nbsp;Less Radio Suppression</span></li>
+								
+									<li><span>&nbsp;Sync II</span></li>
+								
+									<li><span>&nbsp;With Universal Garage Door Opener</span></li>
+								
+									<li><span>&nbsp;Less Wiring Prep</span></li>
+								
+									<li><span>&nbsp;Rear View Camera-Fixed</span></li>
+								
+									<li><span>&nbsp;Less Fog Lamp Bezel</span></li>
+								
+									<li><span>&nbsp;With Auxillary Lights</span></li>
+								
+									<li><span>&nbsp;High Intensity Discharge Headlamp</span></li>
+								
+									<li><span>&nbsp;Less Daytime Running Lamps</span></li>
+								
+									<li><span>&nbsp;Less Front Fog Lamps</span></li>
+								
+									<li><span>&nbsp;Less Spot Light</span></li>
+								
+									<li><span>&nbsp;Less Right Hand Spot Light</span></li>
+								
+									<li><span>&nbsp;With Ambient Lighting-Interior</span></li>
+								
+									<li><span>&nbsp;(-) Package Ty/Dk Lid Lamp-Pre Wire</span></li>
+								
+									<li><span>&nbsp;Tail lamps - Level 1</span></li>
+								
+									<li><span>&nbsp;With Auto High Lamp Headlamp</span></li>
+								
+									<li><span>&nbsp;Less Power Distribution Box - Front</span></li>
+								
+									<li><span>&nbsp;Sterling Grey Metallic</span></li>
+								
+									<li><span>&nbsp;Generic Country Group 1</span></li>
+								
+									<li><span>&nbsp;6 Speed Auto Transmission 6F55</span></li>
+								
+									<li><span>&nbsp;Taurus</span></li>
+								
+									<li><span>&nbsp;SHO</span></li>
+								
+									<li><span>&nbsp;(-) GVMT Service Administration</span></li>
+								
+									<li><span>&nbsp;(-)"CDN"</span></li>
+								
+									<li><span>&nbsp;(-)"GU"</span></li>
+								
+									<li><span>&nbsp;(-)"BRN"</span></li>
+								
+									<li><span>&nbsp;(-)"BZ"</span></li>
+								
+									<li><span>&nbsp;(-)"ATG"</span></li>
+								
+									<li><span>&nbsp;(-)"KOR"</span></li>
+								
+									<li><span>&nbsp;(-)"AW"</span></li>
+								
+								</ul>
+							</span>
+						</div>
+					</div>
+					<br/><a id="mfcShowMore" href="#" onclick="showOption('mfcList','mfcShowMore','mfcImg')"><span style="font-size:xx-small;">There are more minor features for this vehicle, click to expand this list.</span></a>
+				</div>
+			</div>
+				
+			
+			
+		</td>
+		
+	</tr>
+	</table>            
+    </td>
+</tr>
+</table>
+  
+    </div>
+
+    
+
+ 
+
+
+
+
+
+
+
+
+	
+		<div class="footer">
+	    
+	    	<a href="/help/copyright.do" title='Copyright, Ford Motor Company 1994 - 2015'>&copy;Copyright, Ford Motor Company 1994 - 2015</a>
+	    
+	    	|&nbsp;<a href="/help/privacy.do" title='Privacy Policy'>Privacy Policy</a>
+		</div>
+		<div class="actionTime" id="actionTime" pageid="vehicleSelectedVehicleDetails">
+	    
+	   &nbsp;&nbsp;Action took 122 ms. on fcvas1901a
+		</div>
+	<script type="text/javascript">if (!NREUMQ.f) { NREUMQ.f=function() {NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:") + "//" + "js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","bam.nr-data.net","0e10a09ea3","3937137","ZlwEYRMEVkdTU0RdC18WMVADMUpVXENRVxBYVggaFwBQXVFcVWcBXVwFQQgKVhpWXw==",0,14,new Date().getTime(),"","","","",""]);</script></div>
+
+
+        <script>
+            $globalTranslations = {
+               "more" : "More",
+               "less" : "Less",
+               "results" : "Results"};
+            $translations = {};
+        </script>
+
+        <script type="text/javascript">
+        <!--  to hide script contents from old browsers
+
+        function myNewWindow(pageContextId)
+        {
+            openHelpWindow('default', pageContextId);
+        }
+
+        function openHelpWindow(contextualHelpId, pageContextId)
+        {
+            some_new_window=open("/contextualHelp.do?contextualHelpId="+contextualHelpId+"&pageContextId=" + pageContextId,"help","top=150,left=450,menubar=no,toolbar=no,scrollbar=yes,scrollbars=yes,resizable=yes,width=450,height=500,status=yes");
+        }
+        // end hiding contents from old browsers  -->
+        </script>
+
+        <script type"text/javascript">
+          $('<div></div>', {class: 'loading'}).prependTo('body');
+        </script>
+        <script type="text/javascript" src="/layout/fallback/js/scripts.js"></script>
+
+    <script>
+    $(document).ready(function(){
+        statusBarIsShown();
+    });
+
+    function statusBarIsShown() {
+        $statusBar = $('div.status-bar');
+
+        if ( $statusBar.length ) {
+            $statusBar.show();
+            $('div.header').addClass('status-bar--shown');
+            $('.navigation--open-mobile-wrapper').addClass('status-bar--shown');
+            $('.navigation__mobile').addClass('status-bar--shown');
+        }
+    }
+    </script>
+
+
+    <script type="text/javascript" src="/js/logging/log4javascript_stub.js"></script>
+    <script type="text/javascript">
+        var log = log4javascript.getLogger();
+    </script>
+    </script>
+
+    </body>
+</html>

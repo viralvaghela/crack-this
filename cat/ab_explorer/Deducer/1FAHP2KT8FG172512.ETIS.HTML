@@ -1,0 +1,1064 @@
+
+
+
+
+
+
+    
+    
+
+	
+	
+
+    
+    
+
+	
+	
+
+	
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+    
+	
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html><head>
+
+    <!-- Viewport Meta
+    ************************************************** -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keep-br" content="true"/>
+    <title>Vehicle Summary</title>
+
+    <!-- Cross-Frame Scripting -->
+    <!-- The following code is used to prevent ETIS from being used in an iframe on other sites -->
+    <!-- Implementation found at: https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet -->
+    <style id="click_jack_prevention">
+        body {
+            display: none !important;
+        }
+    </style>
+    <script language="JavaScript" type="text/javascript" src="/js/FDT-EU/29f29a47b4bf9ebc2187292a8d477a3a6e5f8d2e_dialogHelper.js"></script>
+    <script type="text/javascript">
+        if(self === top)
+        {
+            var click_jack_prevention = document.getElementById("click_jack_prevention");
+            click_jack_prevention.parentNode.removeChild(click_jack_prevention);
+        }
+        else
+        {
+            top.location = self.location;
+        }
+    </script>
+    <script type="text/javascript">
+        function addCSRFTokenToURL(url)
+        {
+            addCSRFTokenToURL(url, false);
+        }
+
+        function addCSRFTokenToURL(url, atStart)
+        {
+            if(url != undefined && url.trim().length > 0 && url.indexOf("org.apache.struts.taglib.html.TOKEN") == -1)
+            {
+                var token = getCSRFToken();
+                if(atStart)
+                {
+                    url = "org.apache.struts.taglib.html.TOKEN=" + token + "&" + url;
+                }
+                else
+                {
+                    url += (url.match(/\?/) ? "&" : "?") + "org.apache.struts.taglib.html.TOKEN=" + token;
+                }
+            }
+            return url;
+        }
+
+        function getCSRFToken()
+        {
+            var token = "11f5914ebaca4f19bee142064265b2f4";
+            return token;
+        }
+    </script>
+
+    <!-- Stylesheets
+    ************************************************** -->
+    <!--[if lte IE 9]>
+      <link rel="stylesheet" href="/layout/responsive/css/ie9-1.css">
+      <link rel="stylesheet" href="/layout/responsive/css/93d11154c0289bb05212f9355fd8954f119136c0_ie9-blessed1.css">
+      <link rel="stylesheet" href="/layout/responsive/css/66f9f3715ebee5ed22818ede046a974157b3b28a_ie9-blessed2.css">
+    <![endif]-->
+    <link rel="stylesheet" href="/layout/responsive/css/6dda970779394108911d183d0bf77e2c90c6b6ed_style.min.css"/>
+    <link rel="stylesheet" href="/vehicle/dd76c580222ccd15d4d6eebc6e17d71006dec89b_vehicleDetails.css" type="text/css" />
+        <link rel="stylesheet" href="/js/jquery-ui-1.10.3/739930f8038d3a16fce2f01196315636d3c7e70a_jquery-ui.css" type="text/css" />
+        <link rel="stylesheet" href="/js/jquery-ui-1.10.3/d66c534d9d002ad47816128c458807787f18dc5a_jquery-ui-patch.css" type="text/css" />
+    <!-- Favicons, Apple Icons & Microsoft Icons
+    ************************************************** -->
+    <link rel="shortcut icon" href="/layout/global/img/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/layout/global/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/layout/global/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/layout/global/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/layout/global/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/layout/global/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/layout/global/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/layout/global/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/layout/global/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="/layout/global/img/favicons/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="/layout/global/img/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/layout/global/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/layout/global/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/layout/global/img/favicons/favicon-16x16.png" sizes="16x16">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-square70x70logo" content="/layout/global/img/favicons/mstile-70x70.png">
+    <meta name="msapplication-square150x150logo" content="/layout/global/img/favicons/mstile-150x150.png">
+    <meta name="msapplication-square310x310logo" content="/layout/global/img/favicons/mstile-310x310.png">
+    <meta name="msapplication-wide310x150logo" content="/layout/global/img/favicons/mstile-310x150.png">
+
+    </head>
+
+<body onload="setup();" >
+
+    <!-- header modals -->
+    <div class="modal system-status" id="system-status-modal">
+      <div>
+
+        <div class="title__modal">
+          <div class="content__title">
+            <p>Ford System Status</p>
+          </div>
+          <div class="actions__title"><i class="fa fa-close"></i></div>
+        </div>
+
+        <div class="content__modal">
+           <p>FordEtis performance metrics for system availability measured as system uptime can be accessed from the link below. The metric which will be published weekly shows the previous weeks performance in detail and a 12 week view. Additional metrics will be available soon.                                              <br xmlns:stringUtil="xalan://com.ford.etis.homepagemessage.beans.XSLStringUtil"/><br xmlns:stringUtil="xalan://com.ford.etis.homepagemessage.beans.XSLStringUtil"/><a xmlns:stringUtil="xalan://com.ford.etis.homepagemessage.beans.XSLStringUtil" href="http://www.etis.dealerconnection.com/etis-static/FordEtisMetric.PDF">"FordEtis Metrics"</a></p></br><h2>Service Status</h2><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>Authentication Service</strong></span></p></div></br><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>Digital Service Record</strong></span></p></div></br><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>FordEtis IDS Activation Service</strong></span></p></div></br><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>Parts Kit & Prior Approval</strong></span></p></div></br><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>Search</strong></span></p></div></br><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>Service Information</strong></span></p></div></br><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>Technical Hotline</strong></span></p></div></br><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>Type Approval Number Service</strong></span></p></div></br><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>Vehicle Information</strong></span></p></div></br></div>
+
+        <div class="actions__modal">
+          <div class="content__actions">
+            <button class="button__alternative">Close</button>
+          </div>
+        </div>
+
+      </div>
+    <!-- End Modal -->
+    </div>
+
+    <div id="modal-view-information" class="modal view-information">
+        <div>
+            <div id="machineDiagnosticWaitSpinner" style="display: none;" class="popup-overlay">
+                <img id="loadSpinnerImg" src="/img/ajax-loader.gif" width="60" height="60" class="imgNoBorder" style="position:relative;top:50%"/>
+            </div>
+            <div class="title__modal">
+                <div class="content__title">
+                    <p>Dealer System Status</p>
+                </div>
+                <div class="actions__title"><i class="fa fa-close"></i></div>
+            </div>
+            <div class="content__modal">
+                <div class="table-wrapper">
+                    <div class="table">
+                        <table>
+                            <thead>
+                                    <h4>Device Information</h4>
+                                </thead>
+                            <tbody>
+                                <tr>
+                                        <th>
+                                            User Agent</th>
+                                        <td id="ua"/>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Operation System</th>
+                                        <td id="os"/>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            CPU</th>
+                                        <td id="cpu"/>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Browser</th>
+                                        <td id="browser"/>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Browser Engine</th>
+                                        <td id="engine"/>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Device</th>
+                                        <td id="device"/>
+                                    </tr>
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                </div>
+
+            <div class="actions__modal">
+                <div class="content__actions">
+                    <button class="button__alternative">Close</button>
+                </div>
+            </div>
+
+        </div>
+        <!-- End Modal -->
+    </div>
+
+<noscript>
+    </noscript>
+
+
+
+<!-- Mobile Navigation -->
+<!-- Primary Navigation (Dark bar) -->
+
+
+
+
+
+
+    
+    
+    
+
+
+
+
+
+
+    
+    
+    
+<!-- Mobile Primary Navigation (Side bar) -->
+<div th:fragment="mobile-navigation" class="navigation__mobile" id="mobile-navigation" role="navigation">
+  <ul class="mobile__buttons">
+    <li class="mobile__button ">
+        <a href="#">Home<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/home/welcome.do">Welcome</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/home/about.do">About FordEtis</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/home/conditions.do">Conditions</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/home/charging.do">Charging</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/options.do">Preferences</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/home/contactUs.do">Contact Us</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button active">
+        <a href="#">Vehicle<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/vehicleRegSelector.do">Vehicle Lookup</a>
+        </li>
+        <li class="mobile__secondary-button active">
+            <a href="/selectedVehicleDetails.do">Vehicle Summary</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button ">
+        <a href="#">Information<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/bemm/bemmSelectionForm.do">Vehicle Conversions</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/information/partsCatalog.do">Parts Catalog</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/information/accessoriesCatalog.do">Accessories Catalog</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button ">
+        <a href="#">Services<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/services/specialToolForm.do">Special Tools</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/services/generalWorkshopEquipment.do">Workshop Equipment</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button ">
+        <a href="#">FordService<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/fordservice/home.do">FordService Home</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/fordservice/serviceScheduleForm.do">Service Schedules</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/bemm/bemmSelectionForm.do">Vehicle Conversions</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/fordservice/rescuecards.do">Rescue Cards</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button ">
+        <a href="#">Help<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/help/copyright.do">Copyright</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/help/privacy.do">Privacy</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/help/accessibility.do">Accessibility</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/help/irfaq.do">FAQ</a>
+        </li>
+        </ul></li>
+      </ul>
+</div>
+
+<div class="site-wrapper site">
+
+<!-- Mobile Navigation Trigger (Hamburger Icon) -->
+<!-- Triggers Mobile Navigation (Hamburger Icon) -->
+<div th:fragment="mobile-navigation-trigger" class="mobile-navigation-trigger">
+
+    <a href="#" class="mobile__toggle"></a>
+    <div class="mobile__trigger">
+        <a href="#">
+            <i class="fa fa-bars">
+              <p>Navigation</p>
+            </i>
+        </a>
+    </div>
+
+</div>
+<!-- Header (Logo + Title, Account Information) -->
+<!-- Header -->
+<div class="header ">
+  <div class="container">
+    <div class="grid">
+
+      <div class="grid__item one-half palm-one-whole palm-ac header__logo-wrapper">
+        <a href="#" class="header__logo">
+          <img src="/layout/responsive/img/logo/ford-logo@2x.png" class="logo" alt="FordEtis" title="Return to the Home page">
+          <h1>Ford<span>Etis</span></h1>
+        </a>
+      </div><!--
+
+    --><div class="grid__item one-half palm-one-whole palm-ac header__account-wrapper">
+        <div class="grid">
+        <div class="grid__item one-half header__account">
+            <a href="/home/loginForm.do" class="account__logout">
+               <p>Login or Register</p>
+               <i class="fa fa-sign-in login--tablet"></i>
+             </a>
+           </div>
+            <i class="fa fullscreen fa-compress"></i>
+            </div>
+       </div>
+
+     </div>
+  </div>
+</div>
+<script>
+    var etisGlobalParameters = {
+                locale:"en"+"_"+"US",
+                
+                    vin:"1FAHP2KT8FG172512",
+                
+                userType:"INDEPENDENT",
+                userName:"",
+            };
+
+    function redirectToPts(ptsLinkSource) {
+        $.get("/ptsPage.do?ptsLinkSource=" + ptsLinkSource, function (url) {
+            console.log("saving PTS exit event");
+            window.location = url;
+        });
+    }
+</script><div class="global-wrapper active">
+
+    <!-- Desktop Navigation -->
+    <!-- Primary Navigation (Dark bar) -->
+
+
+
+
+
+
+    
+    
+    
+
+
+
+
+
+
+    
+    
+    
+<!-- Primary Navigation -->
+<div th:fragment="primary-navigation" class="navigation__primary">
+
+    <div class="container">
+        <div class="grid">
+            <div class="grid__item one-whole">
+                <ul class="navigation__buttons">
+                    <li class="navigation__button">
+                            <a href="/home.do" class="button__first">Home</a></li>
+                    <li class="navigation__button">
+                            <a href="/vehicleRegSelector.do" class=" active">Vehicle</a><img src="/layout/responsive/img/active-point/active-nav-point.svg" alt="Active Page" class="button--active-point" onerror="this.onerror=null; this.src='/layout/responsive/img/active-point/active-nav-point.png'">
+                            </li>
+                    <li class="navigation__button">
+                            <a href="/information.do" class="">Information</a></li>
+                    <li class="navigation__button">
+                            <a href="/services.do" class="">Services</a></li>
+                    <li class="navigation__button">
+                            <a href="/fordservice/home.do" class="">FordService</a></li>
+                    <li class="navigation__button">
+                            <a href="/help.do" class="button__last">Help</a></li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Secondary Navigation (Branded blue bar) -->
+
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<!-- Secondary Navigation (Branded blue bar) -->
+<div th:fragment="secondary-navigation" class="navigation__secondary">
+    <div class="container">
+        <div class="grid">
+            <div class="grid__item one-whole">
+                <ul class="navigation__buttons">
+                    <li class="navigation__button">
+                            <a href="/vehicleRegSelector.do" class="button__first">Vehicle Lookup</a></li><!--
+                        --><li class="navigation__button active">
+                                    <a href="/selectedVehicleDetails.do" class="">Vehicle Summary</a></li><!--
+                        --></ul>
+            </div>
+        </div>
+    </div>
+</div><!-- Hero Unit (Displays background image and page title) -->
+    <div th:fragment="hero-unit" class="hero hero__vehicle">
+    <div class="container">
+        <div class="grid">
+            <div class="grid__item one-whole">
+                <div class="hero__contents">
+                    <h2>Vehicle Summary</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Information Bar (Displays last selected vehicle and 'need help?' link depending on page) -->
+    <div th:fragment="information-bar" class="information-bar">
+  <div class="container">
+    <div class="grid">
+      <div class="grid__item one-whole palm-one-whole information-bar__left">
+        <a href="/selectedVehicleDetails.do"><p>
+          <span class="last-selected">
+            <i class="fa fa-bookmark"></i><strong>Last selected vehicle -</strong>
+          </span>
+          
+                (1FAHP2KT8FG172512) Taurus, 3.5L DOHC V6 Petrol T/C, Tuxedo Black Metallic</p></a>
+      </div></div>
+  </div>
+</div>
+</div>
+<div id="vehicle-summary" class="content-wrapper">
+     <div class="container-full">
+      <div class="modules">
+       <div class="container">
+
+        <div id="metaDataModal" style="display: none;">
+        </div>
+
+        <NOSCRIPT>
+            <div class="warning" >
+                <div>
+                    This page requires JavaScript for full functionality, <a href="/help/howTo/minSpec.do">click here for more information</a>.</div>
+            </div>
+        </NOSCRIPT>
+
+        <div class="grid">
+
+          <div class="grid__item one-half">
+
+            <div id="statusHolder" class="whatsnewBorder" style="visibility: hidden; display: none;">
+            </div>
+
+            <div class="module">
+              <div id="recallContentFrame" class="whatsnewBorder">
+                <div class="control-bar">
+                    <span></span>
+                    <div class="control-bar__actions">
+                      <div class="control-bar__utilities">
+                         <i class="fa fa-minus-square" title="Click to collapse"></i>
+                      </div>
+                    </div>
+                </div>
+
+                <h2>Outstanding Field Service Actions</h2>
+                <div id="recallContent">
+                    <span>We will check for outstanding service actions on your selected vehicle, using your detected country: United States</br>If this country is incorrect, please visit the <a href="/options.do">preferences</a> page and set your country before returning to this page.</br></br></span>
+                    <span>Checking for outstanding actions... Please Wait!</span>
+                </div>
+                <div id="regionPrompt" class="recallContentFrameExpandable">
+                    <span>
+                        We will check for outstanding service actions on your selected vehicle, using your detected country, if this is incorrect you may not see the right information.<br/>We have detected that you are in the: United States<br/>If this information is incorrect, click <a href="#" onClick="showLanguagePreference(); return false;">here</a> to change your country.</span>
+                </div>
+
+                <div id="goasis-language-preference" style="display:none;">
+                    <form name="optionsForm" method="post" action="/updateOptionsFSA.do" id="updateLanguage"><input type="hidden" name="org.apache.struts.taglib.html.TOKEN" value="11f5914ebaca4f19bee142064265b2f4"><fieldset>
+                            <ul class=form-fields>
+                                <li>
+                                    <label for="marketCountry">Country</label>
+                                    <select name="marketCountry" id="marketCountry"><option value="AF">Afghanistan</option><option value="AL">Albania</option><option value="DZ">Algeria</option><option value="AS">American Samoa</option><option value="AD">Andorra</option><option value="AO">Angola</option><option value="AI">Anguilla</option><option value="AQ">Antarctica</option><option value="AG">Antigua and Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AU">Australia</option><option value="AT">Austria</option><option value="AZ">Azerbaijan</option><option value="BS">Bahamas</option><option value="BH">Bahrain</option><option value="BD">Bangladesh</option><option value="BB">Barbados</option><option value="BY">Belarus</option><option value="BE">Belgium</option><option value="BZ">Belize</option><option value="BJ">Benin</option><option value="BM">Bermuda</option><option value="BT">Bhutan</option><option value="BO">Bolivia</option><option value="BA">Bosnia and Herzegovina</option><option value="BW">Botswana</option><option value="BV">Bouvet Islands</option><option value="BR">Brazil</option><option value="IO">British Indian Ocean Territory</option><option value="VG">British Virgin Islands</option><option value="BN">Brunei</option><option value="BG">Bulgaria</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="KH">Cambodia</option><option value="CM">Cameroon</option><option value="CA">Canada</option><option value="CV">Cape Verde</option><option value="CE">Cayman Islands</option><option value="CF">Central African Republic</option><option value="TD">Chad</option><option value="CL">Chile</option><option value="CN">China</option><option value="CX">Christmas Islands</option><option value="CC">Cocos (Keeling) Islands</option><option value="CO">Colombia</option><option value="KM">Comoros</option><option value="CG">Congo</option><option value="CK">Cook Islands</option><option value="CR">Costa Rica</option><option value="CI">Côte d&#039;Ivoire</option><option value="HR">Croatia</option><option value="CU">Cuba</option><option value="CY">Cyprus</option><option value="CZ">Czech Republic</option><option value="DK">Denmark</option><option value="DJ">Djibouti</option><option value="DM">Dominica</option><option value="DO">Dominican Republic</option><option value="EC">Ecuador</option><option value="EG">Egypt</option><option value="SV">El Salvador</option><option value="GQ">Equatorial Guinea</option><option value="ER">Eritrea</option><option value="EE">Estonia</option><option value="ET">Ethiopia</option><option value="FK">Falkland Islands</option><option value="FO">Faroe Islands</option><option value="FJ">Fiji</option><option value="FI">Finland</option><option value="FR">France</option><option value="GF">French Guiana</option><option value="PF">French Polynesia</option><option value="TF">French Southern Territories</option><option value="GA">Gabon</option><option value="GM">Gambia</option><option value="GE">Georgia</option><option value="DE">Germany</option><option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GR">Greece</option><option value="GL">Greenland</option><option value="GD">Bangladesh</option><option value="GP">Guadeloupe</option><option value="GU">Guam</option><option value="GT">Guatemala</option><option value="GN">Guinea</option><option value="GW">Guinea-Bissau</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="HM">Heard and Mcdonalds Islands</option><option value="HN">Honduras</option><option value="HK">Hong Kong</option><option value="HU">Hungary</option><option value="IS">Iceland</option><option value="IN">India</option><option value="ID">Indonesia</option><option value="IR">Iran</option><option value="IQ">Iraq</option><option value="IE">Ireland</option><option value="IL">Israel</option><option value="IT">Italy</option><option value="JM">Jamaica</option><option value="JP">Japan</option><option value="JO">Jordan</option><option value="KZ">Kazakhstan</option><option value="KE">Kenya</option><option value="KI">Kiribati</option><option value="KW">Kuwait</option><option value="KG">Kyrgyzstan</option><option value="LA">Laos</option><option value="LV">Latvia</option><option value="LB">Lebanon</option><option value="LS">Lesotho</option><option value="LR">Liberia</option><option value="LY">Libya</option><option value="LI">Liechtenstein</option><option value="LT">Lithuania</option><option value="LU">Luxembourg</option><option value="MO">Macau</option><option value="MK">Macedonia</option><option value="MG">Madagascar</option><option value="MW">Malawi</option><option value="MY">Malaysia</option><option value="MV">Maldives</option><option value="ML">Mali</option><option value="MT">Malta</option><option value="MH">Marshall Islands</option><option value="MQ">Martinique</option><option value="MR">Mauritania</option><option value="MU">Mauritius</option><option value="YT">Mayotte</option><option value="MX">Mexico</option><option value="FM">Micronesia</option><option value="MD">Moldova</option><option value="MC">Monaco</option><option value="MN">Mongolia</option><option value="MS">Montserrat</option><option value="MA">Morocco</option><option value="MZ">Mozambique</option><option value="MM">Myanmar</option><option value="NA">Namibia</option><option value="NR">Nauru</option><option value="NP">Nepal</option><option value="NL">Netherlands</option><option value="AN">Netherlands Antilles</option><option value="NC">New Caledonia</option><option value="NZ">New Zealand</option><option value="NI">Nicaragua</option><option value="NE">Niger</option><option value="NG">Nigeria</option><option value="NU">Niue</option><option value="NF">Norfolk Islands</option><option value="MP">N Mariana Islands</option><option value="KP">North Korea</option><option value="NO">Norway</option><option value="OM">Oman</option><option value="PK">Pakistan</option><option value="PW">Palau</option><option value="PA">Panama</option><option value="PG">Papua New Guinea</option><option value="PY">Paraguay</option><option value="PB">Palestine</option><option value="PE">Peru</option><option value="PH">Philippines</option><option value="PN">Pitcairn</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="PR">Puerto Rico</option><option value="QA">Qatar</option><option value="RE">Reunion Islands</option><option value="RO">Romania</option><option value="RU">Russia</option><option value="RW">Rwanda</option><option value="SH">St Helena</option><option value="KN">St Kitts and Nevis Islands</option><option value="LC">St Lucia</option><option value="MF">Saint Martin</option><option value="PM">St Pierre and Miquelon Islands</option><option value="VC">St. Vincent and Grenada Islands</option><option value="WS">Samoa</option><option value="SM">San Marino</option><option value="ST">Sao Tome and Principe Islands</option><option value="SA">Saudi Arabia</option><option value="SN">Senegal</option><option value="CS">Serbia and Montenegro</option><option value="SC">Seychelles</option><option value="SL">Sierra Leone</option><option value="SG">Singapore</option><option value="SK">Slovakia</option><option value="SI">Slovenia</option><option value="SB">El Soloman Islands</option><option value="SO">Somalia</option><option value="ZA">South Africa</option><option value="GS">South Georgia And The South Sandwich Islands</option><option value="KR">South Korea</option><option value="ES">Spain</option><option value="LK">Sri Lanka</option><option value="SD">Sudan</option><option value="SR">Suriname</option><option value="SJ">Svalberd and Jan Mayen Islands</option><option value="SZ">Swaziland</option><option value="SE">Sweden</option><option value="CH">Switzerland</option><option value="SY">Syria</option><option value="TW">Taiwan</option><option value="TJ">Tajikistan</option><option value="TZ">Tanzania</option><option value="TH">Thailand</option><option value="CD">The Democratic Republic Of Congo</option><option value="TG">Togo</option><option value="TK">Tokelau</option><option value="TO">Tonga</option><option value="TP">TP</option><option value="TT">Trinidad and Tobago</option><option value="TN">Tunisia</option><option value="TR">Turkey</option><option value="TM">Turkmenistan</option><option value="TC">Turks and Caicos Islands</option><option value="TV">Tuvalu</option><option value="VI">U.S. Virgin Islands</option><option value="UG">Uganda</option><option value="UA">Ukraine</option><option value="AE">United Arab Emirates</option><option value="GB">United Kingdom</option><option value="US" selected="selected">United States</option><option value="UM">US Misc. Pacific Islands</option><option value="UY">Uruguay</option><option value="UZ">Uzbekistan</option><option value="VU">Vanuatu</option><option value="VA">Vatican</option><option value="VE">Venezuela</option><option value="VN">Vietnam</option><option value="WF">Wallis and Futuna Islands</option><option value="EH">Western Sahara</option><option value="YE">Yemen</option><option value="YU">YU</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option><option value="ZR">ZR</option></select></li>
+                            </ul>
+                        </fieldset>
+                    </form></div>
+                </div>
+              </div>
+            </div><!--
+          
+       --><div class="grid__item one-half">
+
+            <div id="vehicleDetails"></div>
+            <script type="text/javascript" language="JavaScript">
+                function getCurrentEvisData()
+                {
+                    new DialogHelper().openNewWindow(1024, 400, '/vehicle/fdsp/getEvisHistory.do', 'evisWindow');
+                }
+            </script>
+
+          </div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+    <div class="media-queries">
+  <div class="mobile"></div>
+  <div class="desktop"></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="grid">
+      <div class="grid__item one-half palm-one-whole footer__left">
+        <p class="action-time" pageid="vehicleSelectedVehicleDetails">
+          
+          Action took 151 ms. on eccvas1900l-eccvas1900l
+        </p>
+        <p>&copy; Ford Motor Company Ltd</p>
+      </div><!--
+
+   --><div class="grid__item one-half palm-one-whole footer__right">
+        <p class="fr"><a href="/help/privacy.do">Privacy Policy</a> <span>/</span> <a href="/home/conditions.do">Terms and Conditions</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+    $globalTranslations = {
+       "more" : "More",
+       "less" : "Less",
+       "results" : "Results"};
+    $translations = {};
+</script>
+
+    <script type="text/javascript">
+    <!--  to hide script contents from old browsers
+
+    function myNewWindow(pageContextId)
+    {
+        openHelpWindow('default', pageContextId);
+    }
+
+    function openHelpWindow(contextualHelpId, pageContextId)
+    {
+        some_new_window=open("/contextualHelp.do?contextualHelpId="+contextualHelpId+"&pageContextId=" + pageContextId,"help","top=150,left=450,menubar=no,toolbar=no,scrollbar=yes,scrollbars=yes,resizable=yes,width=450,height=500,status=yes");
+    }
+    // end hiding contents from old browsers  -->
+    </script>
+
+    <script type="text/javascript" src="/js/541c93c5d1ead465528e0e57509954a14279061b_jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="/layout/global/js/b7d98c1d08e597c7a316bb36f2ca869789108faa_global.js"></script>
+<script type="text/javascript" src="/layout/global/js/a236fe836b6667a6d7586a6ea06306836245e019_common.js"></script>
+    <script type="text/javascript" src="/js/user/client/9db45e9094af5c5f24c455957fadb0f43d7d9e84_client_info.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/jquery-ui-1.10.3/1d67423119a1eeef672c89bb04ca350237ca8720_jquery-ui.min.js"></script>
+<link rel="stylesheet" href="/js/jquery-ui-1.10.3/739930f8038d3a16fce2f01196315636d3c7e70a_jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="/js/jquery-ui-1.10.3/d66c534d9d002ad47816128c458807787f18dc5a_jquery-ui-patch.css" type="text/css" />
+<script type="text/javascript" src="/js/i18n/b90622b48b4390503178e34c14edd24b9c20592a_jquery.ui.datepicker-i18n.js"></script>
+
+<script language="JavaScript" type="text/javascript" src="/js/281d99ec96ebc61ddc356f290b1844e04c13c5a1_jquery.messageProvider.js"></script>
+
+<script>
+    function runTest()
+    {
+         var xhr = new XMLHttpRequest();
+        //set the request type to Get and the destination url to '/machineDiagnostic.do'
+        xhr.open('GET', '/machineDiagnostic.do');
+        //set the reponse type to blob since that's what we're expecting back
+        xhr.responseType = 'blob';
+        xhr.send();
+        xhr.onload = function(e) {
+            if (this.status == 200) {
+                // Create a new Blob object using the response data of the onload object
+                var blob = new Blob([this.response], {type: 'application/x-java-jnlp-file'});
+                var filename = this.getResponseHeader("Content-Disposition").split("=")[1];
+                if (navigator.appVersion.toString().indexOf('.NET') > 0)
+                {
+                    //IE file download
+                    window.navigator.msSaveBlob(blob, filename);
+                }
+                else
+                {
+                    //Create a DOMString representing the blob and point the link element towards it for download on other browsers.
+                    let a = document.createElement("a");
+                    a.style = "display: none";
+                    document.body.appendChild(a);
+                    let url = window.URL.createObjectURL(blob);
+                    a.href = url;
+                    a.download = filename;
+                    //programatically click the link to trigger the download
+                    a.click();
+                    //release the reference to the file by revoking the Object URL
+                    window.URL.revokeObjectURL(url);
+                }
+                $("#machineDiagnosticWaitSpinner").show();
+                var resultsTimer = setInterval(
+                    function()
+                    {
+                        $.ajax({
+                            type: 'GET',
+                            url: '/machineDiagnosticData.do',
+                            cache: false,
+                            statusCode: {
+                                304: function() {
+                                  //the client is performing the analysis
+                                  $("#machineDiagnosticWaitSpinner").show();
+                                },
+
+                                200: function() {
+                                    $("#machineDiagnosticWaitSpinner").hide();
+                                   if (window.location.href.indexOf('?showDiagnosticData=true') !== -1)
+                                   {
+                                       window.location.href = window.location.href;
+                                   }
+                                   else
+                                   {
+                                       window.location.href = window.location.href + '?showDiagnosticData=true';
+                                   }
+                                }
+                            }
+                        });
+                    }
+                ,5000);
+            }else{
+                //deal with your error state here
+            }
+        };
+
+
+    }
+
+    if ('' === 'true')
+    {
+        $('#modal-view-information').fadeIn(400);
+    }
+</script>
+
+    <!-- Pre-Cen IO modal -->
+    <div class="modal system-status" id="old-io-modal">
+      <div>
+
+        <!-- Modal Title -->
+        <div class="title__modal">
+          <div class="content__title">&nbsp;</div>
+          <div class="actions__title"><i class="fa fa-close" id='fa-close-button'></i></div>
+        </div>
+
+        <!-- Modal Content -->
+        <div class="content__modal" id="old-io-modal-content"></div>
+
+        <div class="actions__modal">
+          <div class="content__actions">
+            <button class="button__alternative" id="button-alternative">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- End Modal -->
+
+    <script language="JavaScript" type="text/javascript" src="/js/user/225333c61572a771d582f20ac8ee7e5730f0ff57_preCenIOModal.js"></script>
+    <script type="text/javascript" language="JavaScript">
+    messages = {};
+    messages["vehicle.software.app.state.abort"] = "Application abort";
+    messages["vehicle.software.app.state.abort.confirm"] = "Are you sure you wish to abort the application?";
+</script><script language="JavaScript" type="text/javascript" src="/js/95ac20c5ec6ee5f17f595a2335d4720e3da2687b_containerBoxSettings.js"></script>
+        <script language="JavaScript" type="text/javascript" src="/js/jquery-ui-1.10.3/1d67423119a1eeef672c89bb04ca350237ca8720_jquery-ui.min.js"></script>
+        <script language="JavaScript" type="text/javascript" src="/js/user/settings/467e106fa74e6359cfc53935cec000fd2f9ff3d7_user_settings.js"></script>
+        <script language="JavaScript" type="text/javascript" src="/js/FDT-EU/29f29a47b4bf9ebc2187292a8d477a3a6e5f8d2e_dialogHelper.js"></script>
+        <script language="JavaScript" type="text/javascript" src="/js/FDT-EU/ea9638501e0314926fca16a5961dbb2f11761eb7_gfdrsLicenseHelper.js"></script>
+        <script language="JavaScript" type="text/javascript" src="/js/FDT-EU/e3631612bc027be3cd4e474f17c9aad4e0120eac_diagnosticHelper.js"></script>
+        <script language="JavaScript" type="text/javascript">
+        var userSettings = new UserSettings(0, $);
+        var pageStateSettings = userSettings.pageSectionState;
+        var diagnosticHelper = new DiagnosticHelper();
+        var containerBoxSettings = new ContainerBoxSettings(pageStateSettings);
+        var currentVin = "1FAHP2KT8FG172512";
+
+        function setup()
+        {
+        
+
+            //OASIS LOOK UP AJAX CALL
+            var holderNode = document.getElementById('statusHolder');
+            holderNode.innerHTML = '<iframe id="statusLookup" name="vinLookup" src="/oasisLookup.do?VIN=1FAHP2KT8FG172512" style="visibility: hidden; border:0; height:0px "></iframe>';
+
+            
+
+            //GIVIS LOOK UP AJAX CALL
+            holderNode.innerHTML += '<iframe id="givisLookup" name="vinLookup2" src="/givis/lookup.do" style="visibility: hidden; border:0; height:0px "></iframe>';
+
+            var modulesBoxNode = parent.document.getElementById('modulesContentFrame');
+            if(modulesBoxNode)
+            {
+                modulesBoxNode.style.visibility = "visible";
+            }
+        
+            // load the page state from the DB
+            pageStateSettings.getPageState(function()
+            {
+                setupDtm();
+                setupMinorFeatures();
+
+                containerBoxSettings.setupExpandable('recallContentFrame', '.recallContentFrameExpandable', true);
+                containerBoxSettings.setupExpandable('deliverablesLinks', '.deliverableExpand', false);
+                containerBoxSettings.setupExpandable('checkSheetsDtmGroup', '.checkSheetsDtmExpandable', false);
+                containerBoxSettings.setupExpandable('electiveUpgradesContentFrame', '#electiveUpgradesContent', true);
+                containerBoxSettings.setupExpandable('vehicleSoftwareBox', '.vehicleSoftwareBoxExpandable', false);
+                containerBoxSettings.setupExpandable('vehicleConversionBox', '.vehicleConversionExpandable', false);
+                containerBoxSettings.setupExpandable('primaryFeaturesBox', '.pfcExpand', false);
+                containerBoxSettings.setupExpandable('warrantyBox', '.warrantyBoxExpandable', false);
+            });
+
+            
+
+            // load vehicle details
+            loadJSPFragment($('#vehicleDetails'), '/vehicleDetails.do')
+        }
+
+        
+
+        function updateExpandable()
+        {
+            $('.warrantyBoxExpandable').hide();
+        }
+
+        function showLanguagePreference()
+        {
+            var buttonsClose = {};
+            buttonsClose["Close"] =  function() { $(this).dialog("close"); };
+            buttonsClose["Update"] =  function() { $('#updateLanguage').submit() };
+
+            var $dialog = $('#goasis-language-preference')
+            .dialog({
+                title: "Change Language Preferences",
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                width: 640,
+                buttons: buttonsClose
+            });
+
+            $dialog.dialog("open");
+        }
+
+        var centerMetaDialogFn = function()
+        {
+            var modDiv = $("#metaDataModal");
+
+            if (modDiv.hasClass('ui-dialog-content'))
+            {
+                modDiv.dialog("option", "position", "center");
+            }
+        };
+
+        $(window).resize(centerMetaDialogFn);
+
+        $(window).scroll(centerMetaDialogFn);
+
+        function showMetaDataDialog(otxRef, nodeRef)
+        {
+            var buttons = {};
+            var ok = 'OK';
+            buttons[ok] = function() { $("#metaDataModal").dialog("destroy"); };
+
+            var spinner = "<div style=\"position: absolute; left:220;\"><img src=\"/img/ajax-loader.gif\"/></div>";
+            $("#metaDataModal").html(spinner);
+
+            $("#metaDataModal").dialog({
+                modal: true,
+                open: function(event, ui) {
+                     $('#metaDataModal').dialog('option', 'position', 'center');
+                },
+                autoOpen: false,
+                buttons: buttons,
+                width: 500
+           });
+
+           $("#metaDataModal").dialog("open");
+           $("#metaDataModal").load("/vehicle/electiveUpgradeMetaData.do?otxRef=" + otxRef + "&nodeAddress=" + nodeRef, function()
+           {
+               $('.ui-widget-content a').css('color', 'Blue');
+               $('#metaDataModal').dialog('option', 'position', 'center');
+           });
+        }
+
+        function setupDtm()
+        {
+            $(".dtmExpand").hide();
+
+            if (true)
+            {
+                $("a.dtmLongDescription").click(function(e) {
+                    e.preventDefault();
+                    dtmDescriptionView($('#dtmLongDescription').val());
+                });
+
+                if(false)
+                {
+                    var historyNode = $("#repairHistory");
+                    historyNode.show();
+                    historyNode.css("visibility", "visible");
+                }
+            }
+        }
+
+        function dtmDescriptionView(description)
+        {
+            var buttonsOpts = {};
+            buttonsOpts['Close'] = function() {
+                $(this).dialog("destroy");
+            };
+
+            var $dialog = $('#dtmDescriptionViewModal').dialog({
+                open: function(event, ui) {
+                    $('.ui-dialog-content').css('height','200px');
+                    window.setTimeout(function () {	$(document).unbind('mousedown.dialog-overlay').unbind('mouseup.dialog-overlay'); }, 100);
+                },
+                autoOpen : false,
+                modal : true,
+                resizable : false,
+                width : 640,
+                buttons : buttonsOpts
+            });
+
+            $("#dtmLongDescriptionView").html(description);
+            $dialog.dialog("open");
+            return false;
+        }
+
+        function setupMinorFeatures()
+        {
+            var expandableId = '#minorFeaturesBox';
+            var expandEl = $(expandableId).find('i.fa-plus-square');
+
+            if(!pageStateSettings.getStateLoaded())
+            {
+                pageStateSettings.addSectionState(expandableId, false);
+            }
+            pageStateSettings.registerStateListener(expandableId);
+
+            var clickFn = function(event, triggerSuppress)
+            {
+                expandEl.toggleClass('fa-minus-square fa-plus-square');
+
+                if(!triggerSuppress)
+                {
+                    $(expandableId).trigger("pageSectionStateChange");
+                }
+
+                if (expandEl.hasClass('fa-minus-square'))
+                {
+                    $("#mfcList").css('height', '');
+                    $('#mfcShowMore').hide();
+                    expandEl.attr("title", "Click to collapse");
+                }
+                else
+                {
+                    $("#mfcList").css('height', '40px');
+                    $('#mfcShowMore').show();
+                    expandEl.attr("title", "Click to expand");
+                }
+            };
+
+            expandEl.on('click', clickFn);
+            $('#mfcShowMore').on('click', clickFn);
+        }
+
+        </script>
+
+    <script type="text/javascript" src="/js/logging/0752e83554568b9ba2e9b9fe25be9dd74cc0b868_log4javascript_stub.js"></script>
+<script type="text/javascript">
+    var log = log4javascript.getLogger();
+</script>
+</script>
+
+    <script type="text/javascript">
+        $(document).ajaxSend(function(event, jqxhr, settings)
+        {
+            settings.url = addCSRFTokenToURL(settings.url);
+            if ((settings.contentType === undefined ||
+                ((typeof settings.contentType === 'string' || settings.contentType instanceof String) && settings.contentType.indexOf("application/json") < 0)) &&
+                typeof settings.data === 'string' || settings.data instanceof String)
+            {
+                settings.data = addCSRFTokenToURL(settings.data, true);
+            }
+        });
+    </script>
+</body>
+</html>

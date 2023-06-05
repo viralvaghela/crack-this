@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+    <title>Index - FordServiceInfo.Com</title>
+    <link href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel='stylesheet' />
+    <script src="/Scripts/jquery-2.2.2.js"></script>
+    <script src="/Scripts/modernizr-2.8.3.js"></script>
+    <link href="/assets/css/main.css" rel="stylesheet"/>
+
+    <link href="/assets/css/site.css" rel="stylesheet"/>
+
+
+
+    
+    <style type="text/css">
+        .soc-icons {
+            float: right;
+            /*width:10px;
+            height:10px;*/
+        }
+
+        ul#top-header-menu {
+            margin-right: 1px;
+        }
+
+            ul#top-header-menu li {
+                list-style-type: none;
+                display: inline;
+                padding-left: 1px;
+                padding-right: 1px;
+                font-family: Verdana;
+                font-size: 12px;
+                font-weight: bold;
+                float: right;
+            }
+    </style>
+    <style type="text/css">
+        /*FOR VALIDATION MESSAGE.*/
+        .field-validation-valid {
+            display: none;
+        }
+
+        .validation-summary-valid {
+            display: none;
+        }
+    </style>
+
+    <script type="text/javascript">
+        // /DIABLE RIGHT MOUSE CLICK.
+        $(function () {
+            $(this).bind("contextmenu", function (e) {
+                e.preventDefault();
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+
+    <br />
+    <div class="container">
+
+        <div class="row">
+
+            <ul id="top-header-menu">
+
+                <li>
+                    <a href="/Purchase/CartList">
+                        <i class="glyphicon glyphicon-shopping-cart"></i>
+                        Cart
+                            (0)
+                    </a>
+                </li>
+                <li>
+                    
+                    <a href="/Feedback/feedback">Contact Us</a><span>&nbsp;|&nbsp;</span>
+                </li>
+                    <li>
+                            <a id="lnkLoginTop" href="/Account/Login">Log In</a><span>&nbsp;|&nbsp;</span>
+                    </li>
+            </ul>
+        </div>
+
+        <div class="row">
+            <div class="col-md-7">
+                <img src="/assets/img/Images/fordservice.png" alt="" />
+            </div>
+
+
+            <div class="row" style="float:right; padding: 5px;">
+                
+                <a href="http://www.motorcraft.com" target="_blank"><img src="/assets/img/Images/Motorcraft_lowerbar.png" width="168" height="38" border="0" alt="" /></a>
+            </div>
+        </div>
+        <nav class="navbar navbar-default navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigationbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="container" id="navfluid">
+                <div id="navigationbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav" id="main-tabs">
+
+
+                            <li>
+            <a href="/">Home</a>
+    </li>
+    <li>
+            <a href="/Purchase/ViewProduct">Service Info</a>
+    </li>
+    <li>
+            <a href="/product/training">Training</a>
+    </li>
+    <li>
+            <a href="/keycode/keycodelookup">Key Code</a>
+    </li>
+    <li>
+            <a href="" class="dropdown-toggle" data-toggle="dropdown">Diagnostic Tool Support</a>
+
+
+<ul class="dropdown-menu">
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=48&amp;categoryId=300">Home</a>
+        </li>
+        <li class="dropdown-submenu">
+
+                <a class="dropdown-toggle" data-toggle="dropdown">Software</a>
+
+
+<ul class="dropdown-menu">
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=46&amp;categoryId=286">Home</a>
+        </li>
+        <li class="dropdown-submenu">
+
+                <a class="dropdown-toggle" data-toggle="dropdown">System Requirements</a>
+
+
+<ul class="dropdown-menu">
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=36&amp;categoryId=285">Overview</a>
+        </li>
+</ul>
+        </li>
+        <li class="dropdown-submenu">
+
+                <a class="dropdown-toggle" data-toggle="dropdown">IDS</a>
+
+
+<ul class="dropdown-menu">
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=50&amp;categoryId=303">Overview</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=50&amp;categoryId=275">Check Vehicle Coverage</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=50&amp;categoryId=276">Download Software</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=50&amp;categoryId=277">Purchase Software</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=50&amp;categoryId=288">Calibration Files</a>
+        </li>
+</ul>
+        </li>
+        <li class="dropdown-submenu">
+
+                <a class="dropdown-toggle" data-toggle="dropdown">FJDS</a>
+
+
+<ul class="dropdown-menu">
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=49&amp;categoryId=301">Overview</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=49&amp;categoryId=273">Check Vehicle Coverage</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=50&amp;categoryId=276">Download Software</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=49&amp;categoryId=274">Purchase Software</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=49&amp;categoryId=289">Calibration Files</a>
+        </li>
+</ul>
+        </li>
+        <li class="dropdown-submenu">
+
+                <a class="dropdown-toggle" data-toggle="dropdown">FDRS</a>
+
+
+<ul class="dropdown-menu">
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=51&amp;categoryId=304">Overview</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=51&amp;categoryId=278">Check Vehicle Coverage</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=50&amp;categoryId=276">Download Software</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=51&amp;categoryId=279">Purchase Software</a>
+        </li>
+</ul>
+        </li>
+</ul>
+        </li>
+        <li class="dropdown-submenu">
+
+                <a class="dropdown-toggle" data-toggle="dropdown">Hardware</a>
+
+
+<ul class="dropdown-menu">
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=47&amp;categoryId=287">Home</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=37&amp;categoryId=280">VCM II</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=38&amp;categoryId=281">VCMM</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=39&amp;categoryId=282">Computers</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=40&amp;categoryId=236">CFR</a>
+        </li>
+</ul>
+        </li>
+        <li class="dropdown-submenu">
+
+                <a class="dropdown-toggle" data-toggle="dropdown">Support</a>
+
+
+<ul class="dropdown-menu">
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=41&amp;categoryId=238">User Manuals</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=42&amp;categoryId=240">Troubleshooting</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=43&amp;categoryId=283">Technical Support</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=44&amp;categoryId=284">Warranty</a>
+        </li>
+        <li class="dropdown-submenu">
+
+                <a class="dropdown-toggle" data-toggle="dropdown">Software Licensing</a>
+
+
+<ul class="dropdown-menu">
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=45&amp;categoryId=291">Overview</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=45&amp;categoryId=292">Facts</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=45&amp;categoryId=293">Getting Started</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=45&amp;categoryId=294">Activating Licenses</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=45&amp;categoryId=295">Validating Licenses</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=45&amp;categoryId=296">Returning Licenses</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=45&amp;categoryId=297">Transferring Licenses</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=45&amp;categoryId=298">Renewing Licenses</a>
+        </li>
+        <li class="">
+
+                <a href="/diagnostic/Support?channelId=45&amp;categoryId=299">Uninstalling Licenses</a>
+        </li>
+</ul>
+        </li>
+</ul>
+        </li>
+</ul>
+    </li>
+    <li>
+            <a href="/freeresources/freeresources" class="dropdown-toggle" data-toggle="dropdown">Free Resources</a>
+
+
+<ul class="dropdown-menu">
+        <li class="">
+
+                <a href="/quickguides/bodyrepair">Body Repair Manauls</a>
+        </li>
+        <li class="">
+
+                <a href="/freeresources/obd">OBDII Theory &amp; Operation</a>
+        </li>
+        <li class="">
+
+                <a href="/ownerinformation">Owner Information</a>
+        </li>
+        <li class="">
+
+                <a href="/instructionsheets">Instruction Sheets</a>
+        </li>
+        <li class="">
+
+                <a href="/freeresources/papercd">Paper/CD Manuals</a>
+        </li>
+        <li class="">
+
+                <a href="/quickguides/quickguides">Quick Guides</a>
+        </li>
+        <li class="">
+
+                <a href="/freeresources/tools">Tools &amp; Equipment</a>
+        </li>
+</ul>
+    </li>
+<style>
+    .dropdown-submenu {
+        position: relative;
+    }
+
+        .dropdown-submenu > .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: -6px;
+            margin-left: -1px;
+            -webkit-border-radius: 0 6px 6px 6px;
+            -moz-border-radius: 0 6px 6px 6px;
+            border-radius: 0 6px 6px 6px;
+        }
+
+        .dropdown-submenu:hover > .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-submenu > a:after {
+            display: block;
+            content: " ";
+            float: right;
+            width: 0;
+            height: 0;
+            border-color: transparent;
+            border-style: solid;
+            border-width: 5px 0 5px 5px;
+            border-left-color: #cccccc;
+            margin-top: 5px;
+            margin-right: -10px;
+        }
+
+        .dropdown-submenu:hover > a:after {
+            border-left-color: #ffffff;
+        }
+
+        .dropdown-submenu.pull-left {
+            float: none;
+        }
+
+            .dropdown-submenu.pull-left > .dropdown-menu {
+                left: -100%;
+                margin-left: 10px;
+                -webkit-border-radius: 6px 0 6px 6px;
+                -moz-border-radius: 6px 0 6px 6px;
+                border-radius: 6px 0 6px 6px;
+            }
+</style>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container body-content">
+        
+
+<h2>Module Build Data (As-Built)</h2>
+<form action="/AsBuilt/Details" method="post"><input name="__RequestVerificationToken" type="hidden" value="JYAT2PPGwyVxZmvt97h91yTNDv5MMwQ5sahj7DO2txiuu9n4xHp1fxoMU0Dp9Lsn1-h_zfaxPRyztAgyfq75FInbtsM1" /><div>
+    <h4><u>Step 1. enter a VIN (Vehicle Identification Number)</u></h4><br />
+
+    <input id="VIN" name="VIN" style="width:17em" type="text" value="1FAHP2KT8FG172512" />
+    <span class="field-validation-valid text-danger" data-valmsg-for="VIN" data-valmsg-replace="false">Invalid VIN, please verify VIN and try again</span>
+    
+    <span class="field-validation-valid text-danger" data-valmsg-for="TimeOut" data-valmsg-replace="false">Server is not responding. Please try again.</span>
+    <h4><u> Step 2. submit the As Built request</u></h4>
+    <h4> Your request will be submitted to As-Built. During peak times, this operation could take up to 5 minutes. Do not press the submit button more than once. Doing so will only cancel the current request and issue another, which will start process over again.</h4><br />
+    <h4><b> Warning:</b>Inaccurate or no data will be displayed if an invalid VIN is entered. Also, As-Built data only applies to some 1999 to current model year vehicles.</h4><br />
+    <div class="form-group">
+        
+<h4> Security Check</h4>
+<h4>Type the characters you see in the picture below</h4>
+
+<img id="CaptchaImage" src="/DefaultCaptcha/Generate?t=58cd5b2d44ec459f82fea686d132ba4c" />
+
+<input id="CaptchaDeText" name="CaptchaDeText" type="hidden" value="58cd5b2d44ec459f82fea686d132ba4c" />
+    <script type="text/javascript">
+
+        $(function () {
+            $('#a6aad0903c1f425cbd08ab2f769bb383').show();
+        });
+
+
+        function ______cbc7c737d2b84405919dc3090ba40563________() {
+                $('#a6aad0903c1f425cbd08ab2f769bb383').hide();
+            $.post("/DefaultCaptcha/Refresh", { t: $('#CaptchaDeText').val() },
+                function () {
+                    $('#a6aad0903c1f425cbd08ab2f769bb383').show();
+                });
+            return false;
+        }
+    </script>
+    <a href="#CaptchaInputText" id="a6aad0903c1f425cbd08ab2f769bb383" onclick="______cbc7c737d2b84405919dc3090ba40563________()" style="display: none;">Refresh</a>
+
+
+<br />
+
+
+<br />
+
+<input class="input-validation-error" id="CaptchaInputText" name="CaptchaInputText" type="text" value="" /><br />
+
+Letters are not case-sensitive
+
+<br />
+<div style="font-family:Verdana; font-weight:bold; font-size:12px; color:red;">The Security Code you entered did not match.  Please try again.</div>
+
+    </div>
+    <input type="submit" value="Submit" />
+</div>
+</form>
+        <hr />
+        <!-- Modal -->
+        <div id="browser-warning" title="Browser Alert" style="overflow: hidden;"></div>
+        <footer>
+
+            <div class="row">
+                <div class="col-md-5" style="width:100%; text-align:center; color:white;">
+                    <span style="margin-left:0px; margin-right:0px; font-size:12px; font-family:Verdana;">
+                        <span style="font-size:11px; font-family:Verdana;">&copy; 2019&nbsp;Ford Motor Company</span>&nbsp;|&nbsp;
+    <u style="color:white;"><a Style="color:White" href="/Home/Pricing/7">Pricing Information</a></u>
+&nbsp;|&nbsp;
+                        <a href="/Home/TermsConditions"><u style="color:white;">Terms</u></a>
+                        <span>|</span>
+                        <a href="/Home/privacypolicy"><u style="color:white;">Privacy</u></a>&nbsp;|&nbsp;
+                        <a href="/Home/ReturnPolicy"><u style="color:white;">Return Policy</u></a>&nbsp;|&nbsp;
+                        <a href="/FeedBack/feedback"><u style="color:white;">Contact Us</u></a>&nbsp;|&nbsp;
+                        <a href="/Home/faq"><u style="color:white;">Help</u></a>&nbsp;|&nbsp;
+                        <span style="color:white;">•••</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span style="color:white;">Web Server:&nbsp;WEB1</span>
+</span>
+                    <span style="float:right; margin-right:10px; margin-bottom:2px;">
+                        <a href="http://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https://www.motorcraftservice.com/AsBuilt/Details&amp;p[images][0]=&amp;p[title]=&amp;p[summary]=">
+                            <img src="/assets/img/social/facebook_16.png" alt="facebook" />
+                        </a>
+                        <a href="http://twitter.com/home?status=https://www.motorcraftservice.com/AsBuilt/Details">
+                            <img src="/assets/img/social/twitter_16.png" alt="twitter" />
+                        </a>
+                        <a href="https://plus.google.com/share?url=https://www.motorcraftservice.com/AsBuilt/Details">
+                            <img src="/assets/img/social/youtube_16.png" alt="youtube" />
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+    <script src="/bundles/bootstrap?v=NzP9D5jO6GVMzY8_4Kfk811W0VrrhYdC5doOJzjbWJc1"></script>
+
+    <script src="/assets/js/default/sitelayout?v=hBvVB9FMW42fUVGttX7GD5AnQLO75v7GmGMXsaDECmU1"></script>
+
+    
+    
+
+
+
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        
+
+    });
+</script>

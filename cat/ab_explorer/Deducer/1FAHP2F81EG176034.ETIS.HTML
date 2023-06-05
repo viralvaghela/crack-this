@@ -1,0 +1,1419 @@
+
+
+
+
+
+
+    
+    
+
+	
+	
+
+    
+    
+
+	
+	
+
+	
+    
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+    
+	
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html><head>
+
+    <!-- Viewport Meta
+    ************************************************** -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keep-br" content="true"/>
+    <title>Vehicle Summary</title>
+
+    <!-- Cross-Frame Scripting -->
+    <!-- The following code is used to prevent ETIS from being used in an iframe on other sites -->
+    <!-- Implementation found at: https://www.owasp.org/index.php/Clickjacking_Defense_Cheat_Sheet -->
+    <style id="click_jack_prevention">
+        body {
+            display: none !important;
+        }
+    </style>
+    <script type="text/javascript">
+        if(self === top)
+        {
+            var click_jack_prevention = document.getElementById("click_jack_prevention");
+            click_jack_prevention.parentNode.removeChild(click_jack_prevention);
+        }
+        else
+        {
+            top.location = self.location;
+        }
+    </script>
+
+    <!-- Stylesheets
+    ************************************************** -->
+    <!--[if lte IE 9]>
+      <link rel="stylesheet" href="/layout/responsive/css/ie9-1.css">
+      <link rel="stylesheet" href="/layout/responsive/css/93d11154c0289bb05212f9355fd8954f119136c0_ie9-blessed1.css">
+      <link rel="stylesheet" href="/layout/responsive/css/66f9f3715ebee5ed22818ede046a974157b3b28a_ie9-blessed2.css">
+    <![endif]-->
+    <link rel="stylesheet" href="/layout/responsive/css/65888bb81395cf36691110672415a868ea959114_style.min.css"/>
+    <link rel="stylesheet" href="/vehicle/dd76c580222ccd15d4d6eebc6e17d71006dec89b_vehicleDetails.css" type="text/css" />
+        <link rel="stylesheet" href="/js/jquery-ui-1.10.3/739930f8038d3a16fce2f01196315636d3c7e70a_jquery-ui.css" type="text/css" />
+        <link rel="stylesheet" href="/js/jquery-ui-1.10.3/d66c534d9d002ad47816128c458807787f18dc5a_jquery-ui-patch.css" type="text/css" />
+    <!-- Favicons, Apple Icons & Microsoft Icons
+    ************************************************** -->
+    <link rel="shortcut icon" href="/layout/global/img/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/layout/global/img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/layout/global/img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/layout/global/img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/layout/global/img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/layout/global/img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/layout/global/img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/layout/global/img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/layout/global/img/favicons/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="/layout/global/img/favicons/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="/layout/global/img/favicons/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/layout/global/img/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/layout/global/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/layout/global/img/favicons/favicon-16x16.png" sizes="16x16">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-square70x70logo" content="/layout/global/img/favicons/mstile-70x70.png">
+    <meta name="msapplication-square150x150logo" content="/layout/global/img/favicons/mstile-150x150.png">
+    <meta name="msapplication-square310x310logo" content="/layout/global/img/favicons/mstile-310x310.png">
+    <meta name="msapplication-wide310x150logo" content="/layout/global/img/favicons/mstile-310x150.png">
+
+    
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UwQAV1FRGwEIUFJbBggO"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(21),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(22),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError",l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(13),t(12),"addEventListener"in window&&t(6),c.xhrWrappable&&t(14),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(){M++,N=y.hash,this[u]=g.now()}function o(){M--,y.hash!==N&&i(0,!0);var t=g.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+y,e])}function a(t,e){t.on(e,function(){this[e]=g.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,y=w.location,g=t("loader");if(w[v]&&g.xhrWrappable){var b=t(10),x=t(11),E=t(8),O=t(6),P=t(13),R=t(7),T=t(14),L=t(9),j=t("ee"),S=j.get("tracer");t(15),g.features.spa=!0;var N,M=0;j.on(u,r),j.on(p,r),j.on(d,o),j.on(l,o),j.buffer([u,d,"xhr-done","xhr-resolved"]),O.buffer([u]),P.buffer(["setTimeout"+c,"clearTimeout"+s,u]),T.buffer([u,"new-xhr","send-xhr"+s]),R.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),b.buffer([u]),x.buffer(["propagate",p,l,"executor-err","resolve"+s]),S.buffer([u,"no-"+u]),L.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(T,"send-xhr"+s),a(j,"xhr-resolved"),a(j,"xhr-done"),a(R,m+s),a(R,m+"-done"),a(L,"new-jsonp"),a(L,"jsonp-end"),a(L,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,!0),w[v]("load",i,!0),w[v]("popstate",function(){i(0,M>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(13),s=t(12),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",p="resource",l="-start",h="-end",m="fn"+l,v="fn"+h,w="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(8);var b=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof b&&(this.bstStart=g.now())}),o.on(v,function(t,e){var n=t[0];n instanceof b&&i("bst",[n,e,this.bstStart,g.now()])}),a.on(m,function(t,e,n){this.bstStart=g.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(v,function(t,e){i(w,[e,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+l,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t(24)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=r.apply(this,arguments);return o.emit(n+"start",arguments,t),t.then(function(e){return o.emit(n+"end",[null,e],t),e},function(e){throw o.emit(n+"end",[e],t),e})})}var o=t("ee").get("fetch"),i=t(21);e.exports=o;var a=window,s="fetch-",c=s+"body-",f=["arrayBuffer","blob","json","text","formData"],u=a.Request,d=a.Response,p=a.fetch,l="prototype";u&&d&&p&&(i(f,function(t,e){r(u[l],e,c),r(d[l],e,c)}),r(a,"fetch",s),o.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(s+"done",[null,e],n)}else o.emit(s+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t(24)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){function r(t){function e(){c.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}function n(){c.emit("jsonp-error",[],p),c.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var u=s(a),d="function"==typeof u.parent[u.key];if(d){var p={};f.inPlace(u.parent,[u.key],"cb-",p),t.addEventListener("load",e,!1),t.addEventListener("error",n,!1),c.emit("new-jsonp",[t.src],p)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(u);return e?e[1]:null}function a(t,e){var n=t.match(p),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(d);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t("ee").get("jsonp"),f=t(24)(c);if(e.exports=c,o()){var u=/[?&](?:callback|cb)=([^&#]+)/,d=/(.*)\.([^.]+)/,p=/^(\w+)(\.|$)(.*)$/,l=["appendChild","insertBefore","replaceChild"];f.inPlace(HTMLElement.prototype,l,"dom-"),f.inPlace(HTMLHeadElement.prototype,l,"dom-"),f.inPlace(HTMLBodyElement.prototype,l,"dom-"),c.on("dom-start",function(t){r(t[0])})}},{}],10:[function(t,e,n){var r=t("ee").get("mutation"),o=t(24)(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],11:[function(t,e,n){function r(t){var e=a.context(),n=s(t,"executor-",e),r=new f(n);return a.context(r).getCtx=function(){return e},a.emit("new-promise",[r,e],e),r}function o(t,e){return e}var i=t(24),a=t("ee").get("promise"),s=i(a),c=t(21),f=NREUM.o.PR;e.exports=a,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){a.emit("propagate",[null,!o],i),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var i=e.apply(f,arguments),s=f.resolve(i);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&a.emit("propagate",[t,!0],n),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),a.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this),t[1]=s(t[1],"resolve-",this)}),a.on("executor-err",function(t,e,n){t[1](n)}),s.inPlace(f.prototype,["then"],"then-",o),a.on("then-start",function(t,e){this.promise=e,t[0]=s(t[0],"cb-",this),t[1]=s(t[1],"cb-",this)}),a.on("then-end",function(t,e,n){this.nextPromise=n;var r=this.promise;a.emit("propagate",[r,!0],n)}),a.on("cb-end",function(t,e,n){a.emit("propagate",[n,!0],this.nextPromise)}),a.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=a.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],12:[function(t,e,n){var r=t("ee").get("raf"),o=t(24)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],13:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(24)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],14:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t(24)(u),p=NREUM.o,l=p.XHR,h=p.MO,m=p.PR,v=p.SI,w="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new l(t);try{u.emit("new-xhr",[e],e),e.addEventListener(w,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(l,b),b.prototype=l.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],15:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=a.now()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(e.cat=c.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(16),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,p=t("id"),l=t(19),h=t(18),m=window.XMLHttpRequest;a.features.xhr=!0,t(14),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,l&&(l>34||l<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<d;s++)e.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)})}},{}],16:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],17:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(21),s=t(22),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){u[e]=o(p+e,!0,"api")}),u.addPageAction=o(p+"addPageAction",!0),u.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],18:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],19:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],20:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],21:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],22:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],23:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],24:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(22),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(f){p([f,"",[r,a,o],s])}u(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],s),d}finally{u(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<e.length;c++)s=e[c],a=t[s],r(a)||(t[s]=n(a,f?s+o:o,i,s))}function u(n,r,o){if(!c||e){var i=c;c=!0;try{t.emit(n,r,o,e)}catch(a){p([a,n,r,o])}c=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){p([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function p(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function n(n,r,o,i){if(!p.aborted||i){t&&t(n,r,o);for(var a=e(o),s=m(n),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[n]];return d&&d.push([b,n,r,a]),a}}function l(t,e){y[t]=m(t).concat(e)}function h(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return y[t]||[]}function v(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",g[n]=e,e in u||(u[e]=[])})}var y={},g={},b={on:l,addEventListener:l,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(p.aborted=!0,u=p.backlog={})}var s="nr@context",c=t("gos"),f=t(21),u={},d={},p=e.exports=o();p.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=x.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(g,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()+x.offset],null,"api");var n=l.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-x.offset}var s=(new Date).getTime(),c=t("handle"),f=t(21),u=t("ee"),d=t(20),p=window,l=p.document,h="addEventListener",m="attachEvent",v=p.XMLHttpRequest,w=v&&v.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:v,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1099.min.js"},b=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),x=e.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:b,userAgent:d};t(17),l[h]?(l[h]("DOMContentLoaded",i,!1),p[h]("load",r,!1)):(l[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(23)},{}]},{},["loader",2,15,5,3,4]);</script></head>
+
+<body onload="setup();" >
+
+    <!-- header modals -->
+    <div class="modal system-status" id="system-status-modal">
+      <div>
+
+        <div class="title__modal">
+          <div class="content__title">
+            <p>Ford System Status</p>
+          </div>
+          <div class="actions__title"><i class="fa fa-close"></i></div>
+        </div>
+
+        <div class="content__modal">
+           <p>FordEtis performance metrics for system availability measured as system uptime can be accessed from the link below. The metric which will be published weekly shows the previous weeks performance in detail and a 12 week view. Additional metrics will be available soon.                                              <br xmlns:stringUtil="xalan://com.ford.etis.homepagemessage.beans.XSLStringUtil"/><br xmlns:stringUtil="xalan://com.ford.etis.homepagemessage.beans.XSLStringUtil"/><a xmlns:stringUtil="xalan://com.ford.etis.homepagemessage.beans.XSLStringUtil" href="http://www.etis.dealerconnection.com/etis-static/FordEtisMetric.PDF">"FordEtis Metrics"</a></p></br><h2>Service Status</h2></br><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>Authentication Service</strong></span></p></div></br><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>Digital Service Record</strong></span></p></div></br><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>FordEtis IDS Activation Service</strong></span></p></div></br><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>Parts Kit & Prior Approval</strong></span></p></div></br><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>Search</strong></span></p></div></br><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>Service Information</strong></span></p></div></br><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>Technical Hotline</strong></span></p></div></br><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>Type Approval Number Service</strong></span></p></div></br><div class='serviceStatus'><p><span class='serviceStatusIcon serviceStatusIconGREEN'></span><span class='serviceStatusName'><strong>Vehicle Information</strong></span></p></div></br></div>
+
+        <div class="actions__modal">
+          <div class="content__actions">
+            <button class="button__alternative">Close</button>
+          </div>
+        </div>
+
+      </div>
+    <!-- End Modal -->
+    </div>
+
+    <div id="modal-view-information" class="modal view-information">
+        <div>
+            <div id="machineDiagnosticWaitSpinner" style="display: none;" class="popup-overlay">
+                <img id="loadSpinnerImg" src="/img/ajax-loader.gif" width="60" height="60" class="imgNoBorder" style="position:relative;top:50%"/>
+            </div>
+            <div class="title__modal">
+                <div class="content__title">
+                    <p>Dealer System Status</p>
+                </div>
+                <div class="actions__title"><i class="fa fa-close"></i></div>
+            </div>
+            <div class="content__modal">
+                <div class="table-wrapper">
+                    <div class="table">
+                        <table>
+                            <thead>
+                                    <h4>Device Information</h4>
+                                </thead>
+                            <tbody>
+                                <tr>
+                                        <th>
+                                            User Agent</th>
+                                        <td id="ua"/>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Operation System</th>
+                                        <td id="os"/>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            CPU</th>
+                                        <td id="cpu"/>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Browser</th>
+                                        <td id="browser"/>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Browser Engine</th>
+                                        <td id="engine"/>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            Device</th>
+                                        <td id="device"/>
+                                    </tr>
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                </div>
+
+            <div class="actions__modal">
+                <div class="content__actions">
+                    <button class="button__alternative dialog--no-close" onclick="runTest()">Click to run a performance test on your PC</button>
+                    <button class="button__alternative">Close</button>
+                </div>
+            </div>
+
+        </div>
+        <!-- End Modal -->
+    </div>
+
+<noscript>
+    </noscript>
+
+
+
+<!-- Mobile Navigation -->
+<!-- Primary Navigation (Dark bar) -->
+
+
+
+
+
+
+    
+    
+    
+
+
+
+
+
+
+    
+    
+    
+<!-- Mobile Primary Navigation (Side bar) -->
+<div th:fragment="mobile-navigation" class="navigation__mobile" id="mobile-navigation" role="navigation">
+  <ul class="mobile__buttons">
+    <li class="mobile__button ">
+        <a href="#">Home<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/home/welcome.do">Welcome</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/home/about.do">About FordEtis</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/home/conditions.do">Conditions</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/home/charging.do">Charging</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/options.do">Preferences</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/home/myAccount.do">My Account</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/home/contactUs.do">Contact Us</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button active">
+        <a href="#">Vehicle<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/vehicleRegSelector.do">Vehicle Lookup</a>
+        </li>
+        <li class="mobile__secondary-button active">
+            <a href="/selectedVehicleDetails.do">Vehicle Summary</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/vehicle/softwareUpgrades.do">Vehicle Software</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/dtm/viewSummary.do">DTM</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/tsb/byPfc.do">TSB</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/tan/showTanInformation.do">TAN</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button ">
+        <a href="#">Information<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/information.do">Information Summary</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/workShopManuals.do">Mechanical Repairs</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/bodyRepairs.do">Body & Paint</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/wiring/browse.do">Wiring Diagrams</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/csg/checksheet.do">Check Sheets</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/bemm/bemmSelectionForm.do">Vehicle Conversions</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/information/partsCatalog.do">Parts Catalog</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/information/accessoriesCatalog.do">Accessories Catalog</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button ">
+        <a href="#">Diagnostic<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/dtc/dtcSearchForm.do">DTC Decode</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button ">
+        <a href="#">Services<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/services/specialToolForm.do">Special Tools</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/services/generalWorkshopEquipment.do">Workshop Equipment</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/services/conditions.do">Technical Hotline</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/lts/searchForm.do">Labor Times</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button ">
+        <a href="#">FordService<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/fordservice/home.do">FordService Home</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/fordservice/serviceScheduleForm.do">Service Schedules</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/bemm/bemmSelectionForm.do">Vehicle Conversions</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/fordservice/rescuecards.do">Rescue Cards</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button ">
+        <a href="#">Training<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/techtraining.do">Training Information</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/training/elearning/form.do">eLearning</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button ">
+        <a href="#">Search<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/findForm.do">Search</a>
+        </li>
+        </ul></li>
+      <li class="mobile__button ">
+        <a href="#">Help<i class="fa fa-chevron-down"></i></a>
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<ul class="mobile__secondary-buttons">
+    <li class="mobile__secondary-button ">
+            <a href="/help/copyright.do">Copyright</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/help/privacy.do">Privacy</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/help/accessibility.do">Accessibility</a>
+        </li>
+        <li class="mobile__secondary-button ">
+            <a href="/help/irfaq.do">FAQ</a>
+        </li>
+        </ul></li>
+      </ul>
+</div>
+
+<div class="site-wrapper site">
+
+<!-- Mobile Navigation Trigger (Hamburger Icon) -->
+<!-- Triggers Mobile Navigation (Hamburger Icon) -->
+<div th:fragment="mobile-navigation-trigger" class="mobile-navigation-trigger">
+
+    <a href="#" class="mobile__toggle"></a>
+    <div class="mobile__trigger">
+        <a href="#">
+            <i class="fa fa-bars">
+              <p>Navigation</p>
+            </i>
+        </a>
+    </div>
+
+</div>
+<!-- Header (Logo + Title, Account Information) -->
+<!-- Header -->
+<div class="header ">
+  <div class="container">
+    <div class="grid">
+
+      <div class="grid__item one-half palm-one-whole palm-ac header__logo-wrapper">
+        <a href="#" class="header__logo">
+          <img src="/layout/responsive/img/logo/ford-logo@2x.png" class="logo" alt="FordEtis" title="Return to the Home page">
+          <h1>Ford<span>Etis</span></h1>
+        </a>
+      </div><!--
+
+    --><div class="grid__item one-half palm-one-whole palm-ac header__account-wrapper">
+        <div class="grid">
+        <div class="grid__item one-half header__account">
+            <p title="Independent Operator">Welcome Vincenzo Rajkovich</p><!--
+            --><a href="/logout.do" class="account__logout">
+               <p>Logout<i class="fa fa-sign-out"></i></p>
+               <i class="fa fa-sign-out logout--tablet"></i>
+             </a>
+           </div>
+            <i class="fa fullscreen fa-compress"></i>
+            <span class="notification">
+                    <i class="fa notification__green system-status">
+                      <img src="/layout/global/img/status/server.svg" alt="Ford System Status"/>
+                      <span>Ford System Status</span>
+                    </i><!--
+                    --><i class="fa view-information">
+                      <img src="/layout/global/img/status/laptop.svg" alt="View Information"/>
+                      <span>Dealer System Status</span>
+                    </i>
+                </span>
+            </div>
+       </div>
+
+     </div>
+  </div>
+</div>
+<script>
+    var etisGlobalParameters = {
+                locale:"en"+"_"+"US",
+                
+                    vin:"1FAHP2F81EG176034",
+                
+                userType:"INDEPENDENT",
+                userName:"vincenzo1210",
+            };
+</script><div class="global-wrapper active">
+
+    <!-- Desktop Navigation -->
+    <!-- Primary Navigation (Dark bar) -->
+
+
+
+
+
+
+    
+    
+    
+
+
+
+
+
+
+    
+    
+    
+<!-- Primary Navigation -->
+<div th:fragment="primary-navigation" class="navigation__primary">
+
+    <div class="container">
+        <div class="grid">
+            <div class="grid__item one-whole">
+                <ul class="navigation__buttons">
+                    <li class="navigation__button">
+                            <a href="/home.do" class="button__first">Home</a></li>
+                    <li class="navigation__button">
+                            <a href="/vehicleRegSelector.do" class=" active">Vehicle</a><img src="/layout/responsive/img/active-point/active-nav-point.svg" alt="Active Page" class="button--active-point" onerror="this.onerror=null; this.src='/layout/responsive/img/active-point/active-nav-point.png'">
+                            </li>
+                    <li class="navigation__button">
+                            <a href="/information.do" class="">Information</a></li>
+                    <li class="navigation__button">
+                            <a href="/dtc/dtcSearchForm.do" class="">Diagnostic</a></li>
+                    <li class="navigation__button">
+                            <a href="/services.do" class="">Services</a></li>
+                    <li class="navigation__button">
+                            <a href="/fordservice/home.do" class="">FordService</a></li>
+                    <li class="navigation__button">
+                            <a href="/techtraining.do" class="">Training</a></li>
+                    <li class="navigation__button">
+                            <a href="/findForm.do" class="">Search</a></li>
+                    <li class="navigation__button">
+                            <a href="/help.do" class="button__last">Help</a></li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Secondary Navigation (Branded blue bar) -->
+
+
+
+
+
+
+    
+    
+    
+
+
+
+
+    
+    
+<!-- Secondary Navigation (Branded blue bar) -->
+<div th:fragment="secondary-navigation" class="navigation__secondary">
+    <div class="container">
+        <div class="grid">
+            <div class="grid__item one-whole">
+                <ul class="navigation__buttons">
+                    <li class="navigation__button">
+                            <a href="/vehicleRegSelector.do" class="button__first">Vehicle Lookup</a></li><!--
+                        --><li class="navigation__button active">
+                                    <a href="/selectedVehicleDetails.do" class="">Vehicle Summary</a></li><!--
+                        --><li class="navigation__button">
+                            <a href="/vehicle/softwareUpgrades.do" class="">Vehicle Software</a></li><!--
+                        --><li class="navigation__button">
+                            <a href="/dtm/viewSummary.do" class="">DTM</a></li><!--
+                        --><li class="navigation__button">
+                            <a href="/tsb/byPfc.do" class="">TSB</a></li><!--
+                        --><li class="navigation__button">
+                            <a href="/tan/showTanInformation.do" class="">TAN</a></li><!--
+                        --></ul>
+            </div>
+        </div>
+    </div>
+</div><!-- Hero Unit (Displays background image and page title) -->
+    <div th:fragment="hero-unit" class="hero hero__vehicle">
+    <div class="container">
+        <div class="grid">
+            <div class="grid__item one-whole">
+                <div class="hero__contents">
+                    <h2>Vehicle Summary</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- Information Bar (Displays last selected vehicle and 'need help?' link depending on page) -->
+    <div th:fragment="information-bar" class="information-bar">
+  <div class="container">
+    <div class="grid">
+      <div class="grid__item one-whole palm-one-whole information-bar__left">
+        <a href="/selectedVehicleDetails.do"><p>
+          <span class="last-selected">
+            <i class="fa fa-bookmark"></i><strong>Last selected vehicle -</strong>
+          </span>
+          
+                (1FAHP2F81EG176034) Taurus, 3.5L Cyclone V6 Petrol TI-VCT, Tuxedo Black Metallic</p></a>
+      </div></div>
+  </div>
+</div>
+</div>
+<div id="vehicle-summary" class="content-wrapper">
+     <div class="container-full">
+      <div class="modules">
+       <div class="container">
+
+        <div id="metaDataModal" style="display: none;">
+        </div>
+
+        <NOSCRIPT>
+            <div class="warning" >
+                <div>
+                    This page requires JavaScript for full functionality, <a href="/help/howTo/minSpec.do">click here for more information</a>.</div>
+            </div>
+        </NOSCRIPT>
+
+        <div class="grid">
+
+          <div class="grid__item one-half">
+
+            <div id="statusHolder" class="whatsnewBorder" style="visibility: hidden; display: none;">
+            </div>
+
+            <div class="module">
+              <div id="recallContentFrame" class="whatsnewBorder">
+                <div class="control-bar">
+                    <span></span>
+                    <div class="control-bar__actions">
+                      <div class="control-bar__utilities">
+                         <i class="fa fa-minus-square" title="Click to collapse"></i>
+                      </div>
+                    </div>
+                </div>
+
+                <h2>Outstanding Field Service Actions</h2>
+                <div id="recallContent">
+                    <span>We will check for outstanding service actions on your selected vehicle, using your detected country: United States</br>If this country is incorrect, please visit the <a href="/options.do">preferences</a> page and set your country before returning to this page.</br></br></span>
+                    <span>Checking for outstanding actions... Please Wait!</span>
+                </div>
+                <div id="regionPrompt" class="recallContentFrameExpandable">
+                    <span>
+                        We will check for outstanding service actions on your selected vehicle, using your detected country, if this is incorrect you may not see the right information.<br/>We have detected that you are in the: United States<br/>If this information is incorrect, click <a href="#" onClick="showLanguagePreference(); return false;">here</a> to change your country.</span>
+                </div>
+
+                <div id="goasis-language-preference" style="display:none;">
+                    <form name="optionsForm" method="post" action="/updateOptionsFSA.do" id="updateLanguage"><fieldset>
+                            <ul class=form-fields>
+                                <li>
+                                    <label for="marketCountry">Country</label>
+                                    <select name="marketCountry" id="marketCountry"><option value="AF">Afghanistan</option><option value="AL">Albania</option><option value="DZ">Algeria</option><option value="AS">American Samoa</option><option value="AD">Andorra</option><option value="AO">Angola</option><option value="AI">Anguilla</option><option value="AQ">Antarctica</option><option value="AG">Antigua and Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AU">Australia</option><option value="AT">Austria</option><option value="AZ">Azerbaijan</option><option value="BS">Bahamas</option><option value="BH">Bahrain</option><option value="BD">Bangladesh</option><option value="BB">Barbados</option><option value="BY">Belarus</option><option value="BE">Belgium</option><option value="BZ">Belize</option><option value="BJ">Benin</option><option value="BM">Bermuda</option><option value="BT">Bhutan</option><option value="BO">Bolivia</option><option value="BA">Bosnia and Herzegovina</option><option value="BW">Botswana</option><option value="BV">Bouvet Islands</option><option value="BR">Brazil</option><option value="IO">British Indian Ocean Territory</option><option value="VG">British Virgin Islands</option><option value="BN">Brunei</option><option value="BG">Bulgaria</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="KH">Cambodia</option><option value="CM">Cameroon</option><option value="CA">Canada</option><option value="CV">Cape Verde</option><option value="CE">Cayman Islands</option><option value="CF">Central African Republic</option><option value="TD">Chad</option><option value="CL">Chile</option><option value="CN">China</option><option value="CX">Christmas Islands</option><option value="CC">Cocos (Keeling) Islands</option><option value="CO">Colombia</option><option value="KM">Comoros</option><option value="CG">Congo</option><option value="CK">Cook Islands</option><option value="CR">Costa Rica</option><option value="CI">Côte d&#039;Ivoire</option><option value="HR">Croatia</option><option value="CU">Cuba</option><option value="CY">Cyprus</option><option value="CZ">Czech Republic</option><option value="DK">Denmark</option><option value="DJ">Djibouti</option><option value="DM">Dominica</option><option value="DO">Dominican Republic</option><option value="EC">Ecuador</option><option value="EG">Egypt</option><option value="SV">El Salvador</option><option value="GQ">Equatorial Guinea</option><option value="ER">Eritrea</option><option value="EE">Estonia</option><option value="ET">Ethiopia</option><option value="FK">Falkland Islands</option><option value="FO">Faroe Islands</option><option value="FJ">Fiji</option><option value="FI">Finland</option><option value="FR">France</option><option value="GF">French Guiana</option><option value="PF">French Polynesia</option><option value="TF">French Southern Territories</option><option value="GA">Gabon</option><option value="GM">Gambia</option><option value="GE">Georgia</option><option value="DE">Germany</option><option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GR">Greece</option><option value="GL">Greenland</option><option value="GD">Bangladesh</option><option value="GP">Guadeloupe</option><option value="GU">Guam</option><option value="GT">Guatemala</option><option value="GN">Guinea</option><option value="GW">Guinea-Bissau</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="HM">Heard and Mcdonalds Islands</option><option value="HN">Honduras</option><option value="HK">Hong Kong</option><option value="HU">Hungary</option><option value="IS">Iceland</option><option value="IN">India</option><option value="ID">Indonesia</option><option value="IR">Iran</option><option value="IQ">Iraq</option><option value="IE">Ireland</option><option value="IL">Israel</option><option value="IT">Italy</option><option value="JM">Jamaica</option><option value="JP">Japan</option><option value="JO">Jordan</option><option value="KZ">Kazakhstan</option><option value="KE">Kenya</option><option value="KI">Kiribati</option><option value="KW">Kuwait</option><option value="KG">Kyrgyzstan</option><option value="LA">Laos</option><option value="LV">Latvia</option><option value="LB">Lebanon</option><option value="LS">Lesotho</option><option value="LR">Liberia</option><option value="LY">Libya</option><option value="LI">Liechtenstein</option><option value="LT">Lithuania</option><option value="LU">Luxembourg</option><option value="MO">Macau</option><option value="MK">Macedonia</option><option value="MG">Madagascar</option><option value="MW">Malawi</option><option value="MY">Malaysia</option><option value="MV">Maldives</option><option value="ML">Mali</option><option value="MT">Malta</option><option value="MH">Marshall Islands</option><option value="MQ">Martinique</option><option value="MR">Mauritania</option><option value="MU">Mauritius</option><option value="YT">Mayotte</option><option value="MX">Mexico</option><option value="FM">Micronesia</option><option value="MD">Moldova</option><option value="MC">Monaco</option><option value="MN">Mongolia</option><option value="MS">Montserrat</option><option value="MA">Morocco</option><option value="MZ">Mozambique</option><option value="MM">Myanmar</option><option value="NA">Namibia</option><option value="NR">Nauru</option><option value="NP">Nepal</option><option value="NL">Netherlands</option><option value="AN">Netherlands Antilles</option><option value="NC">New Caledonia</option><option value="NZ">New Zealand</option><option value="NI">Nicaragua</option><option value="NE">Niger</option><option value="NG">Nigeria</option><option value="NU">Niue</option><option value="NF">Norfolk Islands</option><option value="MP">N Mariana Islands</option><option value="KP">North Korea</option><option value="NO">Norway</option><option value="OM">Oman</option><option value="PK">Pakistan</option><option value="PW">Palau</option><option value="PA">Panama</option><option value="PG">Papua New Guinea</option><option value="PY">Paraguay</option><option value="PB">Palestine</option><option value="PE">Peru</option><option value="PH">Philippines</option><option value="PN">Pitcairn</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="PR">Puerto Rico</option><option value="QA">Qatar</option><option value="RE">Reunion Islands</option><option value="RO">Romania</option><option value="RU">Russia</option><option value="RW">Rwanda</option><option value="SH">St Helena</option><option value="KN">St Kitts and Nevis Islands</option><option value="LC">St Lucia</option><option value="MF">Saint Martin</option><option value="PM">St Pierre and Miquelon Islands</option><option value="VC">St. Vincent and Grenada Islands</option><option value="WS">Samoa</option><option value="SM">San Marino</option><option value="ST">Sao Tome and Principe Islands</option><option value="SA">Saudi Arabia</option><option value="SN">Senegal</option><option value="CS">Serbia and Montenegro</option><option value="SC">Seychelles</option><option value="SL">Sierra Leone</option><option value="SG">Singapore</option><option value="SK">Slovakia</option><option value="SI">Slovenia</option><option value="SB">El Soloman Islands</option><option value="SO">Somalia</option><option value="ZA">South Africa</option><option value="GS">South Georgia And The South Sandwich Islands</option><option value="KR">South Korea</option><option value="ES">Spain</option><option value="LK">Sri Lanka</option><option value="SD">Sudan</option><option value="SR">Suriname</option><option value="SJ">Svalberd and Jan Mayen Islands</option><option value="SZ">Swaziland</option><option value="SE">Sweden</option><option value="CH">Switzerland</option><option value="SY">Syria</option><option value="TW">Taiwan</option><option value="TJ">Tajikistan</option><option value="TZ">Tanzania</option><option value="TH">Thailand</option><option value="CD">The Democratic Republic Of Congo</option><option value="TG">Togo</option><option value="TK">Tokelau</option><option value="TO">Tonga</option><option value="TP">TP</option><option value="TT">Trinidad and Tobago</option><option value="TN">Tunisia</option><option value="TR">Turkey</option><option value="TM">Turkmenistan</option><option value="TC">Turks and Caicos Islands</option><option value="TV">Tuvalu</option><option value="VI">U.S. Virgin Islands</option><option value="UG">Uganda</option><option value="UA">Ukraine</option><option value="AE">United Arab Emirates</option><option value="GB">United Kingdom</option><option value="US" selected="selected">United States</option><option value="UM">US Misc. Pacific Islands</option><option value="UY">Uruguay</option><option value="UZ">Uzbekistan</option><option value="VU">Vanuatu</option><option value="VA">Vatican</option><option value="VE">Venezuela</option><option value="VN">Vietnam</option><option value="WF">Wallis and Futuna Islands</option><option value="EH">Western Sahara</option><option value="YE">Yemen</option><option value="YU">YU</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option><option value="ZR">ZR</option></select></li>
+                            </ul>
+                        </fieldset>
+                    </form></div>
+                </div>
+              <div id="deliverablesLinks" class="whatsnewBorder module__contents diag-box" >
+                <div class="control-bar">
+                    <span></span>
+                    <div class="control-bar__actions">
+                      <div class="control-bar__utilities">
+                         <i class="fa fa-plus-square" title="Click to expand"></i>
+                      </div>
+                    </div>
+                </div>
+
+                <div id="mechanicalRepairs">
+                    <h2>Mechanical Repairs</h2>
+                    <p>
+                    <span>No information for this publication type could be found for the selected vehicle.</span>
+                        </p>
+                </div>
+
+                <div>
+                    <h2>Body & Paint</h2>
+                    <p>
+                    <span>No information for this publication type could be found for the selected vehicle.</span>
+                        </p>
+                </div>
+
+                <div class="deliverableExpand" style="display: none">
+                    <h2>Wiring Diagrams</h2>
+                    <p>
+                    <span>No information for this publication type could be found for the selected vehicle.</span>
+                        </p>
+                </div>
+
+                </div>
+              <!-- Check sheet groups start -->
+              <div id="checkSheetsDtmGroup" class="whatsnewBorder module__contents diag-box">
+                <div class="control-bar">
+                    <span></span>
+                    <div class="control-bar__actions">
+                      <div class="control-bar__utilities">
+                         <i class="fa fa-plus-square" title="Click to expand"></i>
+                      </div>
+                    </div>
+                </div>
+
+                <div id="checkSheetsGroup">
+                    <h2>Check Sheets</h2>
+                    <p>
+                        <span>
+                            <a href="/csg/checksheet.do">Generate a service check sheet</a>
+                        </span>
+                    </p>
+                </div>
+
+                <!-- Start Demo panel - Service Tools -->
+                <!-- End Demo panel -->
+
+                <div class="checkSheetsDtmExpandable">
+                <div id="DowntimeManagementZone">
+                                <h2>Downtime Management</h2><div id="dtmContent">
+                                    <span>No open DTM record found</span>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+              <!-- Check sheet groups end -->
+              <div id="vehicleSoftwareBox" class="whatsnewBorder">
+                  <div class="control-bar">
+                      <span></span>
+                      <div class="control-bar__actions">
+                          <div class="control-bar__utilities">
+                              <i class="fa fa-plus-square" title="Click to collapse"></i>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div id="modulesContentFrame" style="visibility: hidden;">
+                    <h2>Vehicle Software</h2>
+                    <div id="modulesContent">
+                        <span>Checking for modules... Please Wait!</span>
+                    </div>
+                  </div>
+                  </div>
+              <!-- Vehicle conversions - start -->
+              <div id="vehicleConversionBox" class="whatsnewBorder" >
+                <div class="control-bar">
+                    <span></span>
+                    <div class="control-bar__actions">
+                        <div class="control-bar__utilities">
+                            <i class="fa fa-plus-square" title="Click to collapse"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="bemmGroup" class="vehicleConversionExpandable">
+                    <h2>Vehicle Conversions</h2>
+                    <p>
+                        <span>
+                            <a href="/bemm/bemmSelectionForm.do">Body & Equipment Mounting Manual (BEMM)</a>
+                        </span>
+                    </p>
+                </div>
+
+                <div id="dtcDecode" class="vehicleConversionExpandable">
+                        <h2>Diagnostic Trouble Code (DTC)</h2>
+                        <p>
+                            <span>
+                                <a href="/dtc/dtcSearchForm.do">Diagnostic Trouble Code Search</a>
+                            </span>
+                        </p>
+                    </div>
+                <!-- TAN link -->
+                <div id="tanLink" class="vehicleConversionExpandable">
+                        <h2>Type Approval Number</h2>
+                        <p>
+                            <span>
+                                Type Approval Number (TAN):&nbsp;<a href="/tan/showTanInformation.do">Click Here</a>
+                            </span>
+                        </p>
+                    </div>
+                <div class="vehicleConversionExpandable">
+                    <h2>Parts Catalog</h2>
+                    <p>
+                        <span>
+                            <a href="/externalURL.do?url=http://www.fordecat.com">www.fordecat.com</a>
+                        </span>
+                    </p>
+                </div>
+
+                <div id="rescueCards" class="vehicleConversionExpandable">
+                    <h2>Rescue Cards</h2>
+                    <p>
+                        <span>
+                        <a href="/fordservice/rescuecards.do">Download Rescue Cards</a>
+                        </span>
+                    </p>
+                </div>
+
+              </div>
+              <!-- Vehicle conversions - end -->
+
+              <div class="whatsnewBorder module__contents diag-box" >
+
+                  <div>
+                     <h2>FordService</h2>
+                     <p>
+                      <span>
+                        <a href="/fordservice/serviceScheduleForm.do">Generate a FordService schedule</a>
+                      </span>
+                     </p>
+                  </div>
+
+              </div>
+              </div>
+            </div><!--
+          
+       --><div class="grid__item one-half">
+
+            <div id="vehicleDetails"></div>
+            <div id="primaryFeaturesBox" class="whatsnewBorder">
+                <div class="control-bar">
+                    <span></span>
+                    <div class="control-bar__actions">
+                        <div class="control-bar__utilities">
+                            <i class="fa fa-plus-square" title="Click to expand"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="pfcSummary">
+                    <h2>Primary Features</h2>
+                    <div id="pfcList">
+                        <span>
+                        <table border="0" cellspacing="0" cellpadding="0" class="table__thin" >
+                          <tbody class="table__contents">
+                            <tr>
+                                <th>Build Date:</th>
+                                <td>
+                                04.04.2014</td>
+                            </tr>
+                          <tr class="pfcExpand">
+                                <th>Vehicle Line:</th>
+                                <td>Taurus</td>
+                            </tr>
+                          <tr class="pfcExpand">
+                                <th>Body Style:</th>
+                                <td>4 Door Saloon</td>
+                            </tr>
+                          <tr class="pfcExpand">
+                                <th>Version:</th>
+                                <td>Limited Version</td>
+                            </tr>
+                          <tr class="pfcExpand">
+                                <th>Engine:</th>
+                                <td>3.5L Cyclone V6 Petrol TI-VCT</td>
+                            </tr>
+                          <tr class="pfcExpand">
+                                <th>Transmission:</th>
+                                <td>6 Speed Auto Transmission 6F50</td>
+                            </tr>
+                          <tr class="pfcExpand">
+                                <th>Drive:</th>
+                                <td>LHD FWD</td>
+                            </tr>
+                          <tr class="pfcExpand">
+                                <th>Axle Ratio:</th>
+                                <td>3.16</td>
+                            </tr>
+                          <tr class="pfcExpand">
+                                <th>Emission:</th>
+                                <td>With 49 State/Non Green State Req</td>
+                            </tr>
+                          <tr class="pfcExpand">
+                                <th>Air Conditioning:</th>
+                                <td>Dual Zone Auto Temp Control A/C</td>
+                            </tr>
+                          <tr class="pfcExpand">
+                                <th>Territory:</th>
+                                <td>(+)"USA"</td>
+                            </tr>
+                          <tr class="pfcExpand">
+                                <th>Paint:</th>
+                                <td>Tuxedo Black Metallic</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div id="minorFeaturesBox" class="whatsnewBorder">
+                <div class="control-bar">
+                    <span></span>
+                    <div class="control-bar__actions">
+                        <div class="control-bar__utilities">
+                            <i class="fa fa-plus-square" title="Click to expand"></i>
+                            </div>
+                    </div>
+                </div>
+                <div id="mfcSummary">
+                    <h2>Minor Features</h2>
+                    <div id="mfcList" style="overflow:hidden;height:40px;" >
+                        <div>
+                            <span id="mfcs">
+                                <ul>
+                                <li><span>&nbsp;Dune Interior</span></li><li><span>&nbsp;With Wrapped "B" Pillar Trim</span></li><li><span>&nbsp;Rear End Fascia - Level 1</span></li><li><span>&nbsp;Fr Dr Scuff Plate - Met Insert</span></li><li><span>&nbsp;Less Body Armour</span></li><li><span>&nbsp;With Front Fascia - Level 2</span></li><li><span>&nbsp;With Accent Front Fenders</span></li><li><span>&nbsp;Driver & Passenger Seat Map Pockets</span></li><li><span>&nbsp;With Heated/Cooled Front Seats Only</span></li><li><span>&nbsp;Less Engr Trim Pack - No Content</span></li><li><span>&nbsp;Less Centre Console Top Finisher</span></li><li><span>&nbsp;My Key</span></li><li><span>&nbsp;Less Rear Seat Tray</span></li><li><span>&nbsp;(-) Version Packages</span></li><li><span>&nbsp;Chicago Plant Build</span></li><li><span>&nbsp;Less Appearance Group</span></li><li><span>&nbsp;Less Trim Pack</span></li><li><span>&nbsp;With Memory Pack</span></li><li><span>&nbsp;Feature Content Group 1</span></li><li><span>&nbsp;Less Paint Package</span></li><li><span>&nbsp;Less Tailgate Badges</span></li><li><span>&nbsp;With English Language Label</span></li><li><span>&nbsp;Owner Hand Book Pack</span></li><li><span>&nbsp;Less Mass Customization Package</span></li><li><span>&nbsp;"A" Pillar Cloth Trim</span></li><li><span>&nbsp;"C" Pillar Cloth Trim</span></li><li><span>&nbsp;Power Front Wndow-1 Tch Up/Dwn-Pass</span></li><li><span>&nbsp;With Electric Rear Windows</span></li><li><span>&nbsp;With Solar Tinted Glass</span></li><li><span>&nbsp;With Front Side Laminated Glass</span></li><li><span>&nbsp;With Film Instrument Panel</span></li><li><span>&nbsp;Standard Ovrhed Console & With Rail</span></li><li><span>&nbsp;With Full Floor Console</span></li><li><span>&nbsp;Less Rear Floor Console</span></li><li><span>&nbsp;Fixed Foot Pedals</span></li><li><span>&nbsp;Front Floor Carpet Mats</span></li><li><span>&nbsp;Rear Floor Carpet Mats</span></li><li><span>&nbsp;With Carpet Floor Covering</span></li><li><span>&nbsp;With Illuminated Sunvisor - Drivers</span></li><li><span>&nbsp;With Illuminated Sunvisor-Passenger</span></li><li><span>&nbsp;Door Trim Panel Insert-Film 1</span></li><li><span>&nbsp;Grab Handle Side Door -  Plastic</span></li><li><span>&nbsp;Less Rear Window Blinds</span></li><li><span>&nbsp;Trim Rear - High Line</span></li><li><span>&nbsp;With Load Retention Net</span></li><li><span>&nbsp;Spare Wheel Stowage Cover</span></li><li><span>&nbsp;With Chrome Grille - Painted Insert</span></li><li><span>&nbsp;Active Grilleshutter</span></li><li><span>&nbsp;Bright Greenhouse DLO Moulding</span></li><li><span>&nbsp;Less Door Edge Guards</span></li><li><span>&nbsp;Less Spoiler</span></li><li><span>&nbsp;Automatic Dimming Rear View Mirror</span></li><li><span>&nbsp;4 Door Saloon</span></li><li><span>&nbsp;Dual Power/Htd/Memory/Pud Lamp Mir</span></li><li><span>&nbsp;Ext Mirror Finish-Silver Painted</span></li><li><span>&nbsp;Less Rear Sliding Seat</span></li><li><span>&nbsp;With Rear Center Head Restraint</span></li><li><span>&nbsp;Less Rear Heated Seat</span></li><li><span>&nbsp;2nd Row Seat 60/40 (3 P) - Folding</span></li><li><span>&nbsp;Less 3rd Row Rear Seat</span></li><li><span>&nbsp;With Driver 10 Way Pwr Seat Adjust</span></li><li><span>&nbsp;With Pass 10 Way Power Seat Adjust</span></li><li><span>&nbsp;With Programmable Driver Seat</span></li><li><span>&nbsp;Less Interceptor Siren/Speaker</span></li><li><span>&nbsp;Less Decal Option 1</span></li><li><span>&nbsp;Less Decal Option 2</span></li><li><span>&nbsp;Less Decal Option 3</span></li><li><span>&nbsp;Less Special Service Vehicles 1</span></li><li><span>&nbsp;Less Special Service Vehicles 2</span></li><li><span>&nbsp;Less Special Service Vehicles 3</span></li><li><span>&nbsp;Less Special Service Vehicles 4</span></li><li><span>&nbsp;Less Engine Oil Cooler</span></li><li><span>&nbsp;Body Coloured Exterior Door Handle</span></li><li><span>&nbsp;With Leather Gear Shift Knob</span></li><li><span>&nbsp;Less Decklid Pulldown</span></li><li><span>&nbsp;I/P Mount Deck Release-Battery Pwrd</span></li><li><span>&nbsp;Less Keyed Alike Options</span></li><li><span>&nbsp;Frequency - 315MHZ</span></li><li><span>&nbsp;With Central Locking System</span></li><li><span>&nbsp;Keyless Entry/Start - Passive</span></li><li><span>&nbsp;Fixed Intermittent Windscreen Wiper</span></li><li><span>&nbsp;Less Sun Roof</span></li><li><span>&nbsp;Less Tu-Tone Accent Colour</span></li><li><span>&nbsp;With Front Licence Plate Bracket</span></li><li><span>&nbsp;Side Air Bag - 1st & 2nd row</span></li><li><span>&nbsp;Rear Seat Belts - 2nd Row</span></li><li><span>&nbsp;17" Mini Steel Spare Wheel</span></li><li><span>&nbsp;8.5 X 19" Painted Aluminium Wheel</span></li><li><span>&nbsp;255/45R19 A/S V-Rated</span></li><li><span>&nbsp;Spare Tyre - T155/70D17</span></li><li><span>&nbsp;Less Wheel Covers</span></li><li><span>&nbsp;Less Underbody Deflector</span></li><li><span>&nbsp;Less Immersion Heater</span></li><li><span>&nbsp;With Remote Starter</span></li><li><span>&nbsp;With 49 State/Non Green State Req</span></li><li><span>&nbsp;With Standard Suspension</span></li><li><span>&nbsp;3.16</span></li><li><span>&nbsp;3.5L Cyclone V6 Petrol TI-VCT</span></li><li><span>&nbsp;Quasi - Dual Exhaust System</span></li><li><span>&nbsp;With Chrome Exhaust Pipe Extension</span></li><li><span>&nbsp;Power 4-Wheel Disc Vacuum Boost</span></li><li><span>&nbsp;Standard Duty Fr/Rr Calp And Pads</span></li><li><span>&nbsp;With Anti Lock Brakes And ESP+</span></li><li><span>&nbsp;Less Floor Mats-FIA</span></li><li><span>&nbsp;Less Transmission Oil Cooler</span></li><li><span>&nbsp;Floor Shift</span></li><li><span>&nbsp;Select Shift Tech (SST) W/Thm Swtc</span></li><li><span>&nbsp;Non Locking Capless Fuel Fill</span></li><li><span>&nbsp;FFV-(Ethanol) Fuel</span></li><li><span>&nbsp;Standard Foot Pedal Pad Design</span></li><li><span>&nbsp;With Electric Power Steering</span></li><li><span>&nbsp;Power Tilt/Telescopic Strg Column</span></li><li><span>&nbsp;Less Steering Column Lock</span></li><li><span>&nbsp;With Wood Steering Wheel</span></li><li><span>&nbsp;Less Heated Steering Wheel</span></li><li><span>&nbsp;Less Electronic Speed Limitation</span></li><li><span>&nbsp;With Speed Control</span></li><li><span>&nbsp;Redundant Controls-Steering Wheel 2</span></li><li><span>&nbsp;With MPH/KMH Speedometer</span></li><li><span>&nbsp;Less Tyre Inflation Kit</span></li><li><span>&nbsp;With Header Mnt Compass/Thermometer</span></li><li><span>&nbsp;With Nav System-Becker Traffic Pro</span></li><li><span>&nbsp;Less Lane Departure Warning System</span></li><li><span>&nbsp;Less Blind Spot Information System</span></li><li><span>&nbsp;Human Machine Interface 3</span></li><li><span>&nbsp;With Perimeter Anti-Theft</span></li><li><span>&nbsp;With Rear Parking Aid</span></li><li><span>&nbsp;Less Front Parking Aid</span></li><li><span>&nbsp;Less Automated Parking System</span></li><li><span>&nbsp;Medium Duty Battery</span></li><li><span>&nbsp;Heavy Duty Alternator</span></li><li><span>&nbsp;With Region 1 Electronic Equipment</span></li><li><span>&nbsp;Elect Prem AM/FM Stro/Disc/Clock</span></li><li><span>&nbsp;With Satellite Radio Reception</span></li><li><span>&nbsp;With NAAO Radio Frequency</span></li><li><span>&nbsp;Analogue/Digital Broadcast</span></li><li><span>&nbsp;With Premium Sound System</span></li><li><span>&nbsp;Less Radio Suppression</span></li><li><span>&nbsp;Sync II</span></li><li><span>&nbsp;With Universal Garage Door Opener</span></li><li><span>&nbsp;Less Wiring Prep</span></li><li><span>&nbsp;Rear View Camera-Fixed</span></li><li><span>&nbsp;Less Fog Lamp Bezel</span></li><li><span>&nbsp;With Auxillary Lights</span></li><li><span>&nbsp;With Projector Beam Headlamps</span></li><li><span>&nbsp;With Daytime Running Lamps</span></li><li><span>&nbsp;Less Front Fog Lamps</span></li><li><span>&nbsp;Less Spot Light</span></li><li><span>&nbsp;Less Right Hand Spot Light</span></li><li><span>&nbsp;With Ambient Lighting-Interior</span></li><li><span>&nbsp;(-) Package Ty/Dk Lid Lamp-Pre Wire</span></li><li><span>&nbsp;Tail lamps - Level 1</span></li><li><span>&nbsp;With Automatic Headlamp On/Off</span></li><li><span>&nbsp;Less Wiring Harness</span></li><li><span>&nbsp;Less Power Distribution Box - Front</span></li><li><span>&nbsp;Tuxedo Black Metallic</span></li><li><span>&nbsp;Generic Country Group 1</span></li><li><span>&nbsp;6 Speed Auto Transmission 6F50</span></li><li><span>&nbsp;Taurus</span></li><li><span>&nbsp;Limited Version</span></li><li><span>&nbsp;(-) GVMT Service Administration</span></li><li><span>&nbsp;(-)"CDN"</span></li><li><span>&nbsp;(-)"GU"</span></li><li><span>&nbsp;(-)"BRN"</span></li><li><span>&nbsp;(-)"BZ"</span></li><li><span>&nbsp;(-)"ATG"</span></li><li><span>&nbsp;(-)"KOR"</span></li><li><span>&nbsp;(-)"AW"</span></li></ul>
+                            </span>
+                        </div>
+                    </div>
+                    <span id="mfcShowMore">There are more minor features for this vehicle, click to expand this list.</span>
+                    </div>
+            </div>
+            <script type="text/javascript" language="JavaScript">
+                    function getCurrentEvisData() 
+                    {
+                        new DialogHelper().openNewWindow(1024, 400, '/vehicle/fdsp/getEvisHistory.do', 'evisWindow');
+                    }
+                </script>
+                </div>
+          </div>
+        </div>
+      </div>
+     </div>
+    </div>
+
+    <div class="media-queries">
+  <div class="mobile"></div>
+  <div class="desktop"></div>
+</div>
+</div>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"errorBeacon":"bam.nr-data.net","licenseKey":"0e10a09ea3","agent":"","beacon":"bam.nr-data.net","applicationTime":0,"applicationID":"28439199","transactionName":"ZlwEYRMEVkdTU0RdC18WMVADMUpVXENRVxBYVggaFwBQXVFcVWcBXVwFQQgKVhpWXw==","queueTime":0}</script></div>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="grid">
+      <div class="grid__item one-half palm-one-whole footer__left">
+        <p class="action-time" pageid="vehicleSelectedVehicleDetails">
+          
+          Action took 130 ms. on fcvas1901i-fcvas1901i
+        </p>
+        <p>&copy; Ford Motor Company Ltd</p>
+      </div><!--
+
+   --><div class="grid__item one-half palm-one-whole footer__right">
+        <p class="fr"><a href="/help/privacy.do">Privacy Policy</a> <span>/</span> <a href="/home/conditions.do">Terms and Conditions</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+    $globalTranslations = {
+       "more" : "More",
+       "less" : "Less",
+       "results" : "Results"};
+    $translations = {};
+</script>
+
+    <script type="text/javascript">
+    <!--  to hide script contents from old browsers
+
+    function myNewWindow(pageContextId)
+    {
+        openHelpWindow('default', pageContextId);
+    }
+
+    function openHelpWindow(contextualHelpId, pageContextId)
+    {
+        some_new_window=open("/contextualHelp.do?contextualHelpId="+contextualHelpId+"&pageContextId=" + pageContextId,"help","top=150,left=450,menubar=no,toolbar=no,scrollbar=yes,scrollbars=yes,resizable=yes,width=450,height=500,status=yes");
+    }
+    // end hiding contents from old browsers  -->
+    </script>
+
+    <script type="text/javascript" src="/js/541c93c5d1ead465528e0e57509954a14279061b_jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="/layout/global/js/b7d98c1d08e597c7a316bb36f2ca869789108faa_global.js"></script>
+<script type="text/javascript" src="/js/user/client/9db45e9094af5c5f24c455957fadb0f43d7d9e84_client_info.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/jquery-ui-1.10.3/1d67423119a1eeef672c89bb04ca350237ca8720_jquery-ui.min.js"></script>
+<link rel="stylesheet" href="/js/jquery-ui-1.10.3/739930f8038d3a16fce2f01196315636d3c7e70a_jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="/js/jquery-ui-1.10.3/d66c534d9d002ad47816128c458807787f18dc5a_jquery-ui-patch.css" type="text/css" />
+
+
+<script>
+    function runTest()
+    {
+         var xhr = new XMLHttpRequest();
+        //set the request type to Get and the destination url to '/machineDiagnostic.do'
+        xhr.open('GET', '/machineDiagnostic.do');
+        //set the reponse type to blob since that's what we're expecting back
+        xhr.responseType = 'blob';
+        xhr.send();
+        xhr.onload = function(e) {
+            if (this.status == 200) {
+                // Create a new Blob object using the response data of the onload object
+                var blob = new Blob([this.response], {type: 'application/x-java-jnlp-file'});
+                var filename = this.getResponseHeader("Content-Disposition").split("=")[1];
+                if (navigator.appVersion.toString().indexOf('.NET') > 0)
+                {
+                    //IE file download
+                    window.navigator.msSaveBlob(blob, filename);
+                }
+                else
+                {
+                    //Create a DOMString representing the blob and point the link element towards it for download on other browsers.
+                    let a = document.createElement("a");
+                    a.style = "display: none";
+                    document.body.appendChild(a);
+                    let url = window.URL.createObjectURL(blob);
+                    a.href = url;
+                    a.download = filename;
+                    //programatically click the link to trigger the download
+                    a.click();
+                    //release the reference to the file by revoking the Object URL
+                    window.URL.revokeObjectURL(url);
+                }
+                $("#machineDiagnosticWaitSpinner").show();
+                var resultsTimer = setInterval(
+                    function()
+                    {
+                        $.ajax({
+                            type: 'GET',
+                            url: '/machineDiagnosticData.do',
+                            cache: false,
+                            statusCode: {
+                                304: function() {
+                                  //the client is performing the analysis
+                                  $("#machineDiagnosticWaitSpinner").show();
+                                },
+
+                                200: function() {
+                                    $("#machineDiagnosticWaitSpinner").hide();
+                                   if (window.location.href.indexOf('?showDiagnosticData=true') !== -1)
+                                   {
+                                       window.location.href = window.location.href;
+                                   }
+                                   else
+                                   {
+                                       window.location.href = window.location.href + '?showDiagnosticData=true';
+                                   }
+                                }
+                            }
+                        });
+                    }
+                ,5000);
+            }else{
+                //deal with your error state here
+            }
+        };
+
+
+    }
+
+    if ('' === 'true')
+    {
+        $('#modal-view-information').fadeIn(400);
+    }
+</script>
+
+    <!-- Pre-Cen IO modal -->
+    <div class="modal system-status" id="old-io-modal">
+      <div>
+
+        <!-- Modal Title -->
+        <div class="title__modal">
+          <div class="content__title">&nbsp;</div>
+          <div class="actions__title"><i class="fa fa-close" id='fa-close-button'></i></div>
+        </div>
+
+        <!-- Modal Content -->
+        <div class="content__modal" id="old-io-modal-content"></div>
+
+        <div class="actions__modal">
+          <div class="content__actions">
+            <button class="button__alternative" id="button-alternative">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- End Modal -->
+
+    <script language="JavaScript" type="text/javascript" src="/js/user/225333c61572a771d582f20ac8ee7e5730f0ff57_preCenIOModal.js"></script>
+    <script>
+            var flag = "io.expiring.notification";
+
+            if (sessionStorage.getItem(flag) != 'true') {
+                var willExpireMessage = "For GDPR compliance reasons FordEtis accounts and registration is changing and you will shortly be asked to convert your account.  Don\'t worry, you will not lose your existing data but as part of the process you may be required to tell us if you are a legal representative or an employee.<br/>The legal representative is the person who takes legal responsibility for the actions of the business and its employees (e.g. the dealer principal/general manager), and who is responsible for registering the business in FordEtis including entering VAT details, company address and for acceptance of the terms & conditions.<br/>Please be prepared and make sure you, and any other Etis users in your company, understand which type of users they will be going forward.";
+                showPreCenIOModal(willExpireMessage, flag);
+            }
+        </script>
+    <script language="JavaScript" type="text/javascript" src="/js/jquery-ui-1.10.3/1d67423119a1eeef672c89bb04ca350237ca8720_jquery-ui.min.js"></script>
+        <script language="JavaScript" type="text/javascript" src="/js/user/settings/4e8d7723564f7739e68d193d610ac7d833accd66_user_settings.js"></script>
+        <script language="JavaScript" type="text/javascript" src="/js/FDT-EU/1b346223c804d2d988ec39010068f976fd1f38e1_dialogHelper.js"></script>
+        <script language="JavaScript" type="text/javascript">
+        var userSettings = new UserSettings(61164351, $);
+        var pageStateSettings = userSettings.pageSectionState;
+
+        function setup()
+        {
+        
+
+            //OASIS LOOK UP AJAX CALL
+            var holderNode = document.getElementById('statusHolder');
+            holderNode.innerHTML = '<iframe id="statusLookup" name="vinLookup" src="/oasisLookup.do?VIN=1FAHP2F81EG176034" style="visibility: hidden; border:0; height:0px "></iframe>';
+
+            
+
+            //GIVIS LOOK UP AJAX CALL
+            holderNode.innerHTML += '<iframe id="givisLookup" name="vinLookup2" src="/givis/lookup.do" style="visibility: hidden; border:0; height:0px "></iframe>';
+
+            var modulesBoxNode = parent.document.getElementById('modulesContentFrame');
+            if(modulesBoxNode)
+            {
+                modulesBoxNode.style.visibility = "visible";
+            }
+        
+            // load the page state from the DB
+            pageStateSettings.getPageState(function()
+            {
+                setupDtm();
+                setupMinorFeatures();
+
+                setupExpandable('recallContentFrame', '.recallContentFrameExpandable', true);
+                setupExpandable('deliverablesLinks', '.deliverableExpand', false);
+                setupExpandable('checkSheetsDtmGroup', '.checkSheetsDtmExpandable', false);
+                setupExpandable('electiveUpgradesContentFrame', '#electiveUpgradesContent', true);
+                setupExpandable('vehicleSoftwareBox', '.vehicleSoftwareBoxExpandable', false);
+                setupExpandable('vehicleConversionBox', '.vehicleConversionExpandable', false);
+                setupExpandable('primaryFeaturesBox', '.pfcExpand', false);
+                setupExpandable('warrantyBox', '.warrantyBoxExpandable', false);
+            });
+
+            
+
+            // load vehicle details
+            loadJSPFragment($('#vehicleDetails'), '/vehicleDetails.do')
+        }
+
+        
+
+        function updateExpandable()
+        {
+            $('.warrantyBoxExpandable').hide();
+        }
+
+        function showLanguagePreference()
+        {
+            var buttonsClose = {};
+            buttonsClose["Close"] =  function() { $(this).dialog("close"); };
+            buttonsClose["Update"] =  function() { $('#updateLanguage').submit() };
+
+            var $dialog = $('#goasis-language-preference')
+            .dialog({
+                title: "Change Language Preferences",
+                autoOpen: false,
+                modal: true,
+                resizable: false,
+                width: 640,
+                buttons: buttonsClose
+            });
+
+            $dialog.dialog("open");
+        }
+
+        var centerMetaDialogFn = function()
+        {
+            var modDiv = $("#metaDataModal");
+
+            if (modDiv.hasClass('ui-dialog-content'))
+            {
+                modDiv.dialog("option", "position", "center");
+            }
+        };
+
+        $(window).resize(centerMetaDialogFn);
+
+        $(window).scroll(centerMetaDialogFn);
+
+        function showMetaDataDialog(otxRef, nodeRef)
+        {
+            var buttons = {};
+            var ok = 'OK';
+            buttons[ok] = function() { $("#metaDataModal").dialog("destroy"); };
+
+            var spinner = "<div style=\"position: absolute; left:220;\"><img src=\"/img/ajax-loader.gif\"/></div>";
+            $("#metaDataModal").html(spinner);
+
+            $("#metaDataModal").dialog({
+                modal: true,
+                open: function(event, ui) {
+                     $('#metaDataModal').dialog('option', 'position', 'center');
+                },
+                autoOpen: false,
+                buttons: buttons,
+                width: 500
+           });
+
+           $("#metaDataModal").dialog("open");
+           $("#metaDataModal").load("/vehicle/electiveUpgradeMetaData.do?otxRef=" + otxRef + "&nodeAddress=" + nodeRef, function()
+           {
+               $('.ui-widget-content a').css('color', 'Blue');
+               $('#metaDataModal').dialog('option', 'position', 'center');
+           });
+        }
+
+        function setupDtm()
+        {
+            $(".dtmExpand").hide();
+
+            if (true)
+            {
+                $("a.dtmLongDescription").click(function(e) {
+                    e.preventDefault();
+                    dtmDescriptionView($('#dtmLongDescription').val());
+                });
+
+                if(false)
+                {
+                    var historyNode = $("#repairHistory");
+                    historyNode.show();
+                    historyNode.css("visibility", "visible");
+                }
+            }
+        }
+
+        function dtmDescriptionView(description)
+        {
+            var buttonsOpts = {};
+            buttonsOpts['Close'] = function() {
+                $(this).dialog("destroy");
+            };
+
+            var $dialog = $('#dtmDescriptionViewModal').dialog({
+                open: function(event, ui) {
+                    $('.ui-dialog-content').css('height','200px');
+                    window.setTimeout(function () {	$(document).unbind('mousedown.dialog-overlay').unbind('mouseup.dialog-overlay'); }, 100);
+                },
+                autoOpen : false,
+                modal : true,
+                resizable : false,
+                width : 640,
+                buttons : buttonsOpts
+            });
+
+            $("#dtmLongDescriptionView").html(description);
+            $dialog.dialog("open");
+            return false;
+        }
+
+        function setupExpandable(expId, selector, initExpanded)
+        {
+            var expandableId = '#' + expId;
+            if(!pageStateSettings.getStateLoaded())
+            {
+                pageStateSettings.addSectionState(expandableId, initExpanded);
+            }
+            pageStateSettings.registerStateListener(expandableId);
+
+            $(expandableId).find(initExpanded ? 'i.fa-minus-square' : 'i.fa-plus-square').on('click', function(event, suppressTrigger)
+            {
+                var el = $(this);
+                el.toggleClass(initExpanded ? 'fa-plus-square fa-minus-square' : 'fa-minus-square fa-plus-square');
+
+                if(!suppressTrigger)
+                {
+                    $(expandableId).trigger("pageSectionStateChange");
+                }
+
+                if(el.hasClass('fa-minus-square'))
+                {
+                    $(selector).show();
+                    el.attr("title", "Click to collapse");
+                }
+                else
+                {
+                    $(selector).hide();
+                    el.attr("title", "Click to expand");
+                }
+            });
+            if (!initExpanded)
+            {
+                $(selector).hide();
+            }
+        }
+
+        function setupMinorFeatures()
+        {
+            var expandableId = '#minorFeaturesBox';
+            var expandEl = $(expandableId).find('i.fa-plus-square');
+
+            if(!pageStateSettings.getStateLoaded())
+            {
+                pageStateSettings.addSectionState(expandableId, false);
+            }
+            pageStateSettings.registerStateListener(expandableId);
+
+            var clickFn = function(event, triggerSuppress)
+            {
+                expandEl.toggleClass('fa-minus-square fa-plus-square');
+
+                if(!triggerSuppress)
+                {
+                    $(expandableId).trigger("pageSectionStateChange");
+                }
+
+                if (expandEl.hasClass('fa-minus-square'))
+                {
+                    $("#mfcList").css('height', '');
+                    $('#mfcShowMore').hide();
+                    expandEl.attr("title", "Click to collapse");
+                }
+                else
+                {
+                    $("#mfcList").css('height', '40px');
+                    $('#mfcShowMore').show();
+                    expandEl.attr("title", "Click to expand");
+                }
+            };
+
+            expandEl.on('click', clickFn);
+            $('#mfcShowMore').on('click', clickFn);
+        }
+
+        </script>
+
+    <script type="text/javascript" src="/js/logging/0752e83554568b9ba2e9b9fe25be9dd74cc0b868_log4javascript_stub.js"></script>
+<script type="text/javascript">
+    var log = log4javascript.getLogger();
+</script>
+</script>
+
+    </body>
+</html>
