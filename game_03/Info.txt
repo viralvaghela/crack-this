@@ -1,0 +1,16 @@
+I am a noob programmer so pardon if the crackme doesn't look so good.
+
+Its coded in C# (.NET) using Visual Studio 2010.
+
+=========================
+
+The User ID should be an integer that is less than 4 digits.
+
+The User Code should be an integer as well...
+
+=========================
+
+This crackme is no big deal, so best of luck! :)
+
+Regards,
+HonestGamer

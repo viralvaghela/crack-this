@@ -1,0 +1,7 @@
+CRACK ME #1
+
+DIFFICULTY: 1 - Very easy, for newbies
+
+HAVE FUN :D
+
+MADE BY LUK4SAPPS - 2016
